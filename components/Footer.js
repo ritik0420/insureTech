@@ -11,7 +11,7 @@ export default function Footer() {
             <div className="flex items-center mb-4">
               <div className="relative h-14 w-auto flex items-center justify-center">
                 <Image
-                  src="/images/logo_black-removebg-preview.png"
+                  src="/HeroSectionIcon/logo_black-removebg-preview.png"
                   alt="insureTech Skills Logo"
                   width={200}
                   height={56}

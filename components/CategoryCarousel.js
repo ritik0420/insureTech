@@ -100,7 +100,7 @@ export default function CategoryCarousel({ categories }) {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/pexels-karola-g-6256102.jpg"
+          src="/HeroSectionIcon/pexels-karola-g-6256102.jpg"
           alt="Education background"
           fill
           className="object-cover"

@@ -23,7 +23,7 @@ export default function Header() {
           <Link href="/" className="flex items-center group">
             <div className="relative h-28 sm:h-28 md:h-32 lg:h-36 w-auto flex items-center justify-center transition-all duration-300 group-hover:scale-105">
               <Image
-                src="/images/logo (2).png"
+                src="/HeroSectionIcon/logo (2).png"
                 alt="insureTech Skills Logo"
                 width={300}
                 height={100}

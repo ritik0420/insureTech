@@ -454,7 +454,7 @@ export default function HeroSection() {
                     <div className="absolute inset-0 bg-yellow-400 rounded-full shadow-lg"></div>
                     <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white">
                       <Image
-                        src="/images/brooke-cagle-g1Kr4Ozfoac-unsplash-removebg-preview.png"
+                        src="/HeroSectionIcon/brooke-cagle-g1Kr4Ozfoac-unsplash-removebg-preview.png"
                         alt="Team collaborating and learning together"
                         fill
                         className="object-cover"
@@ -500,7 +500,7 @@ export default function HeroSection() {
                     <div className="absolute inset-0 bg-blue-400 rounded-full shadow-lg"></div>
                     <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white">
                       <Image
-                        src="/images/julio-lopez-bwcO8pN7MS8-unsplash-removebg-preview.png"
+                        src="/HeroSectionIcon/julio-lopez-bwcO8pN7MS8-unsplash-removebg-preview.png"
                         alt="Person working on laptop"
                         fill
                         className="object-cover"
@@ -548,7 +548,7 @@ export default function HeroSection() {
                     <div className="absolute inset-0 bg-green-400 rounded-full shadow-lg"></div>
                     <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white">
                       <Image
-                        src="/images/surface-sAsAxFPXwEg-unsplash-removebg-preview.png"
+                        src="/HeroSectionIcon/surface-sAsAxFPXwEg-unsplash-removebg-preview.png"
                         alt="Hands typing on laptop"
                         fill
                         className="object-cover"
@@ -600,7 +600,7 @@ export default function HeroSection() {
               <div className="flex items-center gap-6 md:gap-12 px-4 md:px-8 flex-shrink-0">
                 <div className="flex items-center justify-center h-12 md:h-16 w-24 md:w-32 transition-all duration-300 opacity-70 hover:opacity-100">
                   <Image
-                    src="/images/AWS.png"
+                    src="/HeroSectionIcon/AWS.png"
                     alt="AWS"
                     width={120}
                     height={40}
@@ -609,7 +609,7 @@ export default function HeroSection() {
                 </div>
                 <div className="flex items-center justify-center h-12 md:h-16 w-24 md:w-32 transition-all duration-300 opacity-70 hover:opacity-100">
                   <Image
-                    src="/images/google (1).png"
+                    src="/HeroSectionIcon/google (1).png"
                     alt="Google"
                     width={120}
                     height={40}
@@ -618,7 +618,7 @@ export default function HeroSection() {
                 </div>
                 <div className="flex items-center justify-center h-12 md:h-16 w-24 md:w-32 transition-all duration-300 opacity-70 hover:opacity-100">
                   <Image
-                    src="/images/cisco.png"
+                    src="/HeroSectionIcon/cisco.png"
                     alt="Cisco"
                     width={120}
                     height={40}
@@ -627,7 +627,7 @@ export default function HeroSection() {
                 </div>
                 <div className="flex items-center justify-center h-12 md:h-16 w-24 md:w-32 transition-all duration-300 opacity-70 hover:opacity-100">
                   <Image
-                    src="/images/salesforce.png"
+                    src="/HeroSectionIcon/salesforce.png"
                     alt="Salesforce"
                     width={120}
                     height={40}
@@ -636,7 +636,7 @@ export default function HeroSection() {
                 </div>
                 <div className="flex items-center justify-center h-12 md:h-16 w-24 md:w-32 transition-all duration-300 opacity-70 hover:opacity-100">
                   <Image
-                    src="/images/microsoft.png"
+                    src="/HeroSectionIcon/microsoft.png"
                     alt="Microsoft"
                     width={120}
                     height={40}
@@ -645,7 +645,7 @@ export default function HeroSection() {
                 </div>
                 <div className="flex items-center justify-center h-12 md:h-16 w-24 md:w-32 transition-all duration-300 opacity-70 hover:opacity-100">
                   <Image
-                    src="/images/Comptia.svg"
+                    src="/HeroSectionIcon/Comptia.svg"
                     alt="CompTIA"
                     width={120}
                     height={40}
@@ -657,7 +657,7 @@ export default function HeroSection() {
               <div className="flex items-center gap-6 md:gap-12 px-4 md:px-8 flex-shrink-0">
                 <div className="flex items-center justify-center h-12 md:h-16 w-24 md:w-32 transition-all duration-300 opacity-70 hover:opacity-100">
                   <Image
-                    src="/images/AWS.png"
+                    src="/HeroSectionIcon/AWS.png"
                     alt="AWS"
                     width={120}
                     height={40}
@@ -666,7 +666,7 @@ export default function HeroSection() {
                 </div>
                 <div className="flex items-center justify-center h-12 md:h-16 w-24 md:w-32 transition-all duration-300 opacity-70 hover:opacity-100">
                   <Image
-                    src="/images/google (1).png"
+                    src="/HeroSectionIcon/google (1).png"
                     alt="Google"
                     width={120}
                     height={40}
@@ -675,7 +675,7 @@ export default function HeroSection() {
                 </div>
                 <div className="flex items-center justify-center h-12 md:h-16 w-24 md:w-32 transition-all duration-300 opacity-70 hover:opacity-100">
                   <Image
-                    src="/images/cisco.png"
+                    src="/HeroSectionIcon/cisco.png"
                     alt="Cisco"
                     width={120}
                     height={40}
@@ -684,7 +684,7 @@ export default function HeroSection() {
                 </div>
                 <div className="flex items-center justify-center h-12 md:h-16 w-24 md:w-32 transition-all duration-300 opacity-70 hover:opacity-100">
                   <Image
-                    src="/images/salesforce.png"
+                    src="/HeroSectionIcon/salesforce.png"
                     alt="Salesforce"
                     width={120}
                     height={40}
@@ -693,7 +693,7 @@ export default function HeroSection() {
                 </div>
                 <div className="flex items-center justify-center h-12 md:h-16 w-24 md:w-32 transition-all duration-300 opacity-70 hover:opacity-100">
                   <Image
-                    src="/images/microsoft.png"
+                    src="/HeroSectionIcon/microsoft.png"
                     alt="Microsoft"
                     width={120}
                     height={40}
@@ -702,7 +702,7 @@ export default function HeroSection() {
                 </div>
                 <div className="flex items-center justify-center h-12 md:h-16 w-24 md:w-32 transition-all duration-300 opacity-70 hover:opacity-100">
                   <Image
-                    src="/images/Comptia.svg"
+                    src="/HeroSectionIcon/Comptia.svg"
                     alt="CompTIA"
                     width={120}
                     height={40}
