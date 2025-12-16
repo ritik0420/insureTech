@@ -247,7 +247,7 @@ export default function Home() {
                   with comprehensive training and certification courses. Our mission is to 
                   bridge the gap between industry requirements and professional skills, 
                   ensuring our learners are equipped with the latest knowledge and practical 
-                  expertise needed to excel in today's competitive technology landscape.
+                  expertise needed to excel in today&apos;s competitive technology landscape.
                 </p>
                 <p>
                   We offer a wide range of courses covering cloud computing, cybersecurity, 
