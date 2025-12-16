@@ -17,8 +17,6 @@ const nextConfig = {
   compress: true,
   // Enable React strict mode for better development
   reactStrictMode: true,
-  // Optimize production builds
-  swcMinify: true,
   // Headers for SEO and security
   async headers() {
     return [
