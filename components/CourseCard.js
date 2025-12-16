@@ -7,7 +7,6 @@ export default function CourseCard({
   icon, 
   mode = 'Online', 
   duration, 
-  popular = false,
   href = '/courses' 
 }) {
   return (
@@ -15,13 +14,6 @@ export default function CourseCard({
       <div className="group relative bg-white rounded-3xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 hover:border-[#2B75FF]/30 overflow-hidden">
         {/* Modern gradient overlay on hover */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#2B75FF]/0 to-[#2B75FF]/0 group-hover:from-[#2B75FF]/5 group-hover:to-transparent transition-all duration-300 pointer-events-none"></div>
-        
-        {popular && (
-          <span className="absolute top-4 left-4 bg-gradient-to-r from-[#2B75FF] to-[#1e5acc] text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg z-10">
-            ⭐ POPULAR
-          </span>
-        )}
-        
         <div className="flex items-start space-x-4 mb-4 relative z-10">
           {icon && (
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#2B75FF] to-[#1e5acc] flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">

@@ -1,10 +1,10 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Button from '@/components/Button';
-import CourseCard from '@/components/CourseCard';
 import CategoryCarousel from '@/components/CategoryCarousel';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import HeroSection from '@/components/HeroSection';
+import PopularCoursesSection from '@/components/PopularCoursesSection';
 import Image from 'next/image';
 
 export const metadata = {
@@ -143,17 +143,20 @@ export default function Home() {
     {
       title: 'Why 2024 Will Be The Year Of Cybersecurity Growth',
       date: '15 March, 2024',
-      image: '/blog-1.jpg',
+      image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop&q=80',
+      category: 'Cybersecurity',
     },
     {
       title: 'Rapid Data Science Evolution In 2024',
       date: '15 March, 2024',
-      image: '/blog-2.jpg',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80',
+      category: 'Data Science',
     },
     {
       title: 'Multi-Cloud Strategy: Benefits, Challenges, and Best Practices',
       date: '15 March, 2024',
-      image: '/blog-3.jpg',
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop&q=80',
+      category: 'Cloud Computing',
     },
   ];
 
@@ -214,70 +217,37 @@ export default function Home() {
       {/* Course Categories */}
       <CategoryCarousel categories={categories} />
 
-      {/* Popular Courses */}
-      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#d7f9ff] via-[#e8fcff] to-[#d7f9ff]" aria-labelledby="popular-courses-heading">
-        {/* Subtle background pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 right-20 w-72 h-72 bg-[#2B75FF] rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#0E1C36] rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="relative max-w-7xl mx-auto z-10">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16">
-            <div className="mb-6 md:mb-0">
-              {/* Modern badge */}
-              <div className="inline-flex items-center gap-2 mb-4">
-                <span className="w-2 h-2 bg-[#2B75FF] rounded-full animate-pulse"></span>
-                <span className="text-sm font-semibold text-[#2B75FF] uppercase tracking-wider">Most Popular</span>
-              </div>
-              
-              <h2 id="popular-courses-heading" className="text-4xl md:text-5xl font-extrabold mb-4 text-[#0E1C36] leading-tight">
-                Explore Our <span className="bg-gradient-to-r from-[#2B75FF] to-[#1e5acc] bg-clip-text text-transparent">Popular Courses</span>
-              </h2>
-              <p className="text-gray-700 text-lg max-w-2xl leading-relaxed">
-                Exclusive and advanced courses designed to accelerate your career growth 
-                with hands-on experience and industry expertise.
-              </p>
-              
-              {/* Modern stats inline */}
-              <div className="flex flex-wrap gap-6 mt-6">
-                <div className="flex items-center gap-2">
-                  <span className="text-2xl font-bold text-[#2B75FF]">98%</span>
-                  <span className="text-sm text-gray-600">Success Rate</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-2xl font-bold text-[#2B75FF]">20k+</span>
-                  <span className="text-sm text-gray-600">Students</span>
-                </div>
-              </div>
-            </div>
-            <Button href="/courses" variant="secondary" className="shadow-lg hover:shadow-xl transition-all duration-300">
-              View All Courses →
-            </Button>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {popularCourses.map((course, index) => (
-              <div key={index} className="transform transition-all duration-300 hover:scale-105">
-                <CourseCard {...course} popular={index < 2} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PopularCoursesSection popularCourses={popularCourses} />
 
       {/* What We Do */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white" aria-labelledby="what-we-do-heading">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 id="what-we-do-heading" className="text-4xl font-bold mb-6 text-[#0E1C36]">What we do</h2>
-              <div className="space-y-4 text-gray-600 leading-relaxed">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden" aria-labelledby="what-we-do-heading">
+        {/* Soft Background with subtle patterns */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-white to-purple-50/30"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(43,117,255,0.08)_0%,transparent_50%),radial-gradient(circle_at_70%_80%,rgba(14,28,54,0.05)_0%,transparent_50%)]"></div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h2 id="what-we-do-heading" className="text-5xl font-bold mb-4 text-[#0E1C36]">
+              What We Do
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#2B75FF] to-[#0E1C36] mx-auto rounded-full"></div>
+            <p className="text-xl text-gray-600 mt-6 max-w-3xl mx-auto">
+              Empowering IT Careers in Insurance Technology
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+            <div className="space-y-6 animate-fade-in-left animation-delay-200">
+              <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
+                <p className="text-xl font-semibold text-[#0E1C36] mb-2">
+                  Comprehensive IT Training & Certification
+                </p>
                 <p>
-                  At insureTech Skills, we are committed to empowering IT professionals 
+                  At InsureTech Skills, we are committed to empowering IT professionals 
                   with comprehensive training and certification courses. Our mission is to 
                   bridge the gap between industry requirements and professional skills, 
                   ensuring our learners are equipped with the latest knowledge and practical 
-                  expertise.
+                  expertise needed to excel in today's competitive technology landscape.
                 </p>
                 <p>
                   We offer a wide range of courses covering cloud computing, cybersecurity, 
@@ -286,50 +256,182 @@ export default function Home() {
                   to help you succeed in your career.
                 </p>
               </div>
-            </div>
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg">
-              <div className="aspect-video rounded-2xl bg-[#d7f9ff] flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-5xl mb-4">🛣️</div>
-                  <p className="text-[#0E1C36] font-semibold">Career Pathways</p>
+              
+              <div className="grid grid-cols-2 gap-4 pt-6">
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-blue-100/50 hover:shadow-lg hover:scale-105 transition-all duration-300 animate-scale-in animation-delay-300">
+                  <div className="text-2xl font-bold text-[#2B75FF] mb-1">50+</div>
+                  <div className="text-sm text-gray-600">Expert Courses</div>
+                </div>
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-blue-100/50 hover:shadow-lg hover:scale-105 transition-all duration-300 animate-scale-in animation-delay-400">
+                  <div className="text-2xl font-bold text-[#2B75FF] mb-1">20k+</div>
+                  <div className="text-sm text-gray-600">Students Trained</div>
+                </div>
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-blue-100/50 hover:shadow-lg hover:scale-105 transition-all duration-300 animate-scale-in animation-delay-500">
+                  <div className="text-2xl font-bold text-[#2B75FF] mb-1">98%</div>
+                  <div className="text-sm text-gray-600">Placement Rate</div>
+                </div>
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-blue-100/50 hover:shadow-lg hover:scale-105 transition-all duration-300 animate-scale-in animation-delay-600">
+                  <div className="text-2xl font-bold text-[#2B75FF] mb-1">24/7</div>
+                  <div className="text-sm text-gray-600">Support Available</div>
                 </div>
               </div>
+            </div>
+            
+            <div className="relative animate-fade-in-right animation-delay-300">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all duration-500 hover:shadow-3xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#2B75FF]/10 to-[#0E1C36]/10 rounded-2xl"></div>
+                <Image
+                  src="/banner.png"
+                  alt="InsureTech Skills - Empowering IT Careers in Insurance Technology"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover rounded-2xl relative z-10"
+                  priority
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0E1C36]/90 via-[#0E1C36]/70 to-transparent p-6 rounded-b-2xl z-20 animate-fade-in animation-delay-500">
+                  <div className="flex items-center gap-3">
+                    <div className="bg-white/20 backdrop-blur-sm rounded-full p-2 animate-scale-in animation-delay-600">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold text-lg">Certified Expert Program</p>
+                      <p className="text-white/80 text-sm">Industry-Recognized Certifications</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mt-12">
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-blue-100/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 animate-fade-in-up animation-delay-400 group">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#2B75FF] to-[#0E1C36] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-[#0E1C36] mb-2">Expert-Led Training</h3>
+              <p className="text-gray-600">
+                Learn from industry-certified professionals with years of real-world experience in insurance technology.
+              </p>
+            </div>
+            
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-blue-100/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 animate-fade-in-up animation-delay-500 group">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#2B75FF] to-[#0E1C36] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-[#0E1C36] mb-2">Career-Focused Curriculum</h3>
+              <p className="text-gray-600">
+                Our courses are designed to align with current industry demands and help you land your dream IT role.
+              </p>
+            </div>
+            
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-blue-100/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 animate-fade-in-up animation-delay-600 group">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#2B75FF] to-[#0E1C36] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-[#0E1C36] mb-2">Personalized Mentorship</h3>
+              <p className="text-gray-600">
+                Get one-on-one guidance from experienced mentors who understand your career goals and challenges.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Blog Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white" aria-labelledby="blog-heading">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 id="blog-heading" className="text-4xl font-bold mb-4 text-[#0E1C36]">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden" aria-labelledby="blog-heading">
+        {/* Soft Background with subtle patterns */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-white to-purple-50/30"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(43,117,255,0.08)_0%,transparent_50%),radial-gradient(circle_at_70%_80%,rgba(14,28,54,0.05)_0%,transparent_50%)]"></div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-16 animate-fade-in-up">
+            {/* Section badge */}
+            <div className="inline-flex items-center gap-2 mb-4 rounded-full bg-white/70 px-3 py-1 shadow-sm border border-white/80 backdrop-blur">
+              <span className="w-2 h-2 bg-[#2B75FF] rounded-full animate-pulse" />
+              <span className="text-xs sm:text-sm font-semibold text-[#2B75FF] uppercase tracking-[0.18em]">
+                Latest Insights
+              </span>
+            </div>
+            
+            <h2 id="blog-heading" className="text-5xl font-bold mb-4 text-[#0E1C36]">
               Our Comprehensive Blog
             </h2>
-            <p className="text-gray-600 text-lg">
+            <div className="w-24 h-1 bg-gradient-to-r from-[#2B75FF] to-[#0E1C36] mx-auto rounded-full mb-6"></div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Insights, Updates, and Expert Tips
             </p>
-            <p className="text-gray-600 mt-2">
+            <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
               Explore our blog for the latest trends, insights, and expert advice in IT and technology.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
             {blogPosts.map((post, index) => (
-              <article key={index} className="bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="aspect-video bg-[#d7f9ff] flex items-center justify-center">
-                  <div className="text-4xl">📰</div>
+              <article 
+                key={index} 
+                className="group bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg border border-blue-100/50 hover:shadow-2xl hover:shadow-[#2B75FF]/20 transition-all duration-500 hover:-translate-y-3 animate-fade-in-up"
+                style={{ animationDelay: `${(index + 1) * 0.1}s` }}
+              >
+                {/* Image Container */}
+                <div className="relative aspect-video bg-gradient-to-br from-[#2B75FF]/10 via-[#d7f9ff] to-[#AFCBFF]/20 overflow-hidden">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#2B75FF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full border border-white/80 shadow-sm z-10">
+                    <span className="text-xs font-semibold text-[#2B75FF]">{post.category || 'IT Insights'}</span>
+                  </div>
+                  {/* Hover overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0E1C36]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
                 </div>
+                
+                {/* Content */}
                 <div className="p-6">
-                  <time className="text-sm text-gray-500 mb-2" dateTime={post.date}>{post.date}</time>
-                  <h3 className="text-xl font-bold text-[#0E1C36] mb-2 hover:text-[#2B75FF] transition-colors">
+                  <div className="flex items-center gap-2 mb-3">
+                    <svg className="w-4 h-4 text-[#2B75FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <time className="text-sm text-gray-500 font-medium" dateTime={post.date}>
+                      {post.date}
+                    </time>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-[#0E1C36] mb-3 group-hover:text-[#2B75FF] transition-colors duration-300 leading-tight line-clamp-2">
                     {post.title}
                   </h3>
+                  
+                  {/* Read More Link */}
+                  <div className="flex items-center gap-2 text-[#2B75FF] font-semibold text-sm opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                    <span>Read More</span>
+                    <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </div>
+                
+                {/* Decorative corner accent */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#2B75FF]/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </article>
             ))}
           </div>
-          <div className="text-center">
-            <Button href="/blog">View All Blogs</Button>
+          
+          <div className="text-center animate-fade-in-up animation-delay-400">
+            <Button href="/blog" variant="secondary" size="lg" className="shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              View All Blogs →
+            </Button>
           </div>
         </div>
       </section>

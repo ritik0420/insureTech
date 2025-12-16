@@ -16,7 +16,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#2B75FF] backdrop-blur-md shadow-lg font-dm-sans font-medium" style={{ borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#1F4FD8] backdrop-blur-md shadow-lg font-dm-sans font-medium" style={{ borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
       <nav className="max-w-7xl mx-auto pl-4 pr-4 sm:pl-6 sm:pr-6 lg:pl-8 lg:pr-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -27,7 +27,8 @@ export default function Header() {
                 alt="insureTech Skills Logo"
                 width={300}
                 height={100}
-                className="h-full w-auto object-contain"
+                className="h-full w-auto object-contain drop-shadow-lg shadow-white/50"
+                style={{ filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3)) drop-shadow(0 2px 4px rgba(255, 255, 255, 0.2))' }}
                 priority
               />
             </div>
@@ -36,7 +37,7 @@ export default function Header() {
           {/* Desktop Search Bar */}
           <div className="hidden lg:flex flex-1 max-w-md mx-8">
             <form onSubmit={handleSearch} className="w-full relative">
-              <div className={`relative flex items-center bg-white/80 backdrop-blur-sm rounded-xl border transition-all duration-300 ${
+              <div className={`relative flex items-center bg-white rounded-xl border transition-all duration-300 ${
                 isSearchFocused 
                   ? 'border-[#60a5fa] shadow-lg shadow-[#60a5fa]/20 bg-white' 
                   : 'border-[#d7f9ff]/50 hover:border-[#d7f9ff]'
@@ -144,7 +145,7 @@ export default function Header() {
           <div className="md:hidden py-4 space-y-2 border-t border-gray-200">
             {/* Mobile Search */}
             <form onSubmit={handleSearch} className="mb-4">
-              <div className={`relative flex items-center bg-white/80 backdrop-blur-sm rounded-xl border transition-all duration-300 ${
+              <div className={`relative flex items-center bg-white rounded-xl border transition-all duration-300 ${
                 isSearchFocused 
                   ? 'border-[#60a5fa] shadow-lg shadow-[#60a5fa]/20 bg-white' 
                   : 'border-[#d7f9ff]/50'
