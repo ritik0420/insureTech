@@ -15,7 +15,8 @@ export default function Footer() {
                   alt="insureTech Skills Logo"
                   width={200}
                   height={56}
-                  className="h-14 w-auto object-contain"
+                  className="h-14 object-contain"
+                  style={{ width: 'auto' }}
                 />
               </div>
             </div>

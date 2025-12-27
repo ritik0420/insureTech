@@ -11,12 +11,14 @@ export default function CourseCard({
 }) {
   return (
     <Link href={href}>
-      <div className="group relative bg-white rounded-3xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 hover:border-[#2B75FF]/30 overflow-hidden">
+      <div className="group relative bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 hover:border-[#2B75FF]/40 overflow-hidden">
+        {/* Depth shadow layer */}
+        <div className="absolute inset-0 rounded-3xl shadow-[0_8px_30px_rgba(15,35,52,0.08)] group-hover:shadow-[0_12px_40px_rgba(43,117,255,0.15)] transition-all duration-300 pointer-events-none"></div>
         {/* Modern gradient overlay on hover */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2B75FF]/0 to-[#2B75FF]/0 group-hover:from-[#2B75FF]/5 group-hover:to-transparent transition-all duration-300 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2B75FF]/0 to-[#2B75FF]/0 group-hover:from-[#2B75FF]/5 group-hover:to-transparent transition-all duration-300 pointer-events-none z-0"></div>
         <div className="flex items-start space-x-4 mb-4 relative z-10">
           {icon && (
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#2B75FF] to-[#1e5acc] flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#2B75FF] to-[#1e5acc] flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#2B75FF]/30 group-hover:shadow-xl group-hover:shadow-[#2B75FF]/40 group-hover:scale-110 transition-all duration-300">
               {icon}
             </div>
           )}

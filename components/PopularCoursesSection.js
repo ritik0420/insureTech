@@ -45,7 +45,7 @@ const cardVariants = {
 export default function PopularCoursesSection({ popularCourses = [] }) {
   return (
     <section
-      className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#d7f9ff] via-[#e8fcff] to-[#d7f9ff] overflow-hidden"
+      className="relative py-24 px-4 sm:px-6 lg:px-8 bg-[#d7f9ff] overflow-hidden"
       aria-labelledby="popular-courses-heading"
     >
       {/* Subtle background pattern echoing hero + category sections */}
@@ -98,6 +98,7 @@ export default function PopularCoursesSection({ popularCourses = [] }) {
                     src="/icons8-rank-48.png"
                     alt="Student success icon"
                     fill
+                    sizes="32px"
                     className="object-contain"
                   />
                 </motion.div>
@@ -115,6 +116,7 @@ export default function PopularCoursesSection({ popularCourses = [] }) {
                     src="/icons8-student-48.png"
                     alt="Ranked students icon"
                     fill
+                    sizes="32px"
                     className="object-contain"
                   />
                 </motion.div>

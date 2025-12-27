@@ -11,6 +11,23 @@ export default function CategoryCarousel({ categories }) {
   const [startX, setStartX] = useState(0);
   const carouselRef = useRef(null);
 
+  // Function to get Unsplash image based on category
+  const getCategoryImage = (categoryTitle) => {
+    const imageMap = {
+      'Cloud Computing': 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80',
+      'IT Security': 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=400&fit=crop&q=80',
+      'Data Science': 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&q=80',
+      'Project Management': 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=400&fit=crop&q=80',
+      'Software Testing': 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop&q=80',
+      'Web Development': 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=400&fit=crop&q=80',
+      'Salesforce': 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80',
+      'Networking': 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80',
+      'Cloud Security': 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=400&fit=crop&q=80',
+      'Cyber Security': 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=400&fit=crop&q=80',
+    };
+    return imageMap[categoryTitle] || 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80';
+  };
+
   useEffect(() => {
     const updateItemsPerView = () => {
       if (window.innerWidth < 640) {
@@ -20,9 +37,9 @@ export default function CategoryCarousel({ categories }) {
       } else if (window.innerWidth < 1024) {
         setItemsPerView(4); // Tablet: 4 items
       } else if (window.innerWidth < 1280) {
-        setItemsPerView(5); // Large tablet: 5 items
+        setItemsPerView(4); // Large tablet: 4 items
       } else {
-        setItemsPerView(5); // Desktop: 5 items
+        setItemsPerView(4); // Desktop: 4 items
       }
     };
 
@@ -230,7 +247,7 @@ export default function CategoryCarousel({ categories }) {
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
-                className="relative grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 z-0"
+                className="relative grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-6 z-0"
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
@@ -247,54 +264,111 @@ export default function CategoryCarousel({ categories }) {
                       whileHover={{ scale: 1.03 }}
                       className="group"
                     >
-                      <div className="relative bg-white/85 backdrop-blur-sm rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center cursor-pointer h-full min-h-[260px] md:min-h-[280px] border border-white/30 shadow-sm hover:shadow-2xl hover:shadow-[#2B75FF]/20 transition-all duration-500 overflow-hidden">
-                        {/* Gradient background on hover */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#2B75FF]/5 via-transparent to-[#AFCBFF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        
-                        {/* Course count badge */}
-                        {category.courses && (
-                          <div className="absolute top-3 right-3 z-20 px-2.5 py-1 bg-[#2B75FF]/10 backdrop-blur-sm rounded-full border border-[#2B75FF]/20 group-hover:bg-[#2B75FF]/20 group-hover:border-[#2B75FF]/40 transition-all duration-300">
-                            <span className="text-[10px] font-semibold text-[#2B75FF]">{category.courses}</span>
+                      <div className="relative bg-white rounded-xl overflow-hidden cursor-pointer h-full shadow-lg hover:shadow-xl transition-all duration-300">
+                        {/* Header Image with Unsplash */}
+                        <div className="relative h-32 md:h-36 overflow-hidden">
+                          {/* Unsplash Image */}
+                          <Image
+                            src={getCategoryImage(category.title)}
+                            alt={category.title}
+                            fill
+                            className="object-cover group-hover:scale-110 transition-transform duration-500"
+                            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                          />
+                          {/* Dark overlay for better contrast */}
+                          <div className="absolute inset-0 bg-gradient-to-b from-[#0E1C36]/60 via-[#0E1C36]/40 to-[#0E1C36]/60"></div>
+                          {/* Futuristic Grid Pattern Overlay */}
+                          <div className="absolute inset-0 opacity-20">
+                            <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                              <defs>
+                                <pattern id={`grid-pattern-${globalIndex}`} width="20" height="20" patternUnits="userSpaceOnUse">
+                                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#2B75FF" strokeWidth="1"/>
+                                </pattern>
+                              </defs>
+                              <rect width="100%" height="100%" fill={`url(#grid-pattern-${globalIndex})`} />
+                            </svg>
                           </div>
-                        )}
-                        
-                        {/* Icon Container with modern styling */}
-                        <div className="relative z-10 mb-4 flex items-center justify-center">
-                          <div className="absolute inset-0 bg-gradient-to-br from-[#2B75FF]/20 to-[#AFCBFF]/30 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 scale-0 group-hover:scale-100"></div>
-                          <div className="relative group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                            <Image
-                              src={category.icon}
-                              alt={category.title}
-                              width={80}
-                              height={80}
-                              className="w-20 h-20 md:w-24 md:h-24 object-contain"
-                            />
+                          {/* Additional horizontal and vertical lines */}
+                          <div className="absolute inset-0">
+                            <div className="absolute top-1/4 left-0 right-0 h-px bg-[#2B75FF] opacity-30"></div>
+                            <div className="absolute top-1/2 left-0 right-0 h-px bg-[#2B75FF] opacity-30"></div>
+                            <div className="absolute top-3/4 left-0 right-0 h-px bg-[#2B75FF] opacity-30"></div>
+                            <div className="absolute left-1/4 top-0 bottom-0 w-px bg-[#2B75FF] opacity-30"></div>
+                            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[#2B75FF] opacity-30"></div>
+                            <div className="absolute left-3/4 top-0 bottom-0 w-px bg-[#2B75FF] opacity-30"></div>
+                          </div>
+                          
+                          {/* Blue Square Icon with White Icon in bottom-left */}
+                          <div className="absolute bottom-3 left-3 w-10 h-10 bg-[#2B75FF] rounded flex items-center justify-center shadow-lg z-10">
+                            <div className="relative w-6 h-6">
+                              <Image
+                                src={category.icon}
+                                alt={category.title}
+                                width={24}
+                                height={24}
+                                className="w-6 h-6 object-contain filter brightness-0 invert"
+                              />
+                            </div>
                           </div>
                         </div>
-                        
-                        {/* Title */}
-                        <h3 className="relative z-10 text-base md:text-lg font-bold text-[#0E1C36] text-center mb-2 group-hover:text-[#2B75FF] transition-colors duration-300 leading-tight">
-                          {category.title}
-                        </h3>
 
-                        {/* Description */}
-                        {category.description && (
-                          <p className="relative z-10 text-sm md:text-base text-gray-600 text-center mb-3 group-hover:text-gray-700 transition-colors duration-300 leading-relaxed px-2">
-                            {category.description}
-                          </p>
-                        )}
+                        {/* Content Section */}
+                        <div className="p-4 md:p-5">
+                          {/* Title - Large, Bold Blue */}
+                          <h3 className="text-xl md:text-2xl font-bold text-[#2B75FF] mb-2 leading-tight">
+                            {category.title}
+                          </h3>
 
-                        {/* Learn More Indicator */}
-                        <div className="relative z-10 mt-auto flex items-center gap-1.5 text-[#2B75FF] opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                          <span className="text-[10px] font-semibold uppercase tracking-wide">Explore</span>
-                          <svg className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                          </svg>
+                          {/* Description - Smaller Grey */}
+                          {category.description && (
+                            <p className="text-sm text-gray-600 mb-4 leading-relaxed line-clamp-2">
+                              {category.description}
+                            </p>
+                          )}
+
+                          {/* Program Type and Rating Row */}
+                          <div className="flex items-center justify-between mb-3">
+                            {/* Program Type */}
+                            <div className="flex items-center gap-1.5">
+                              <svg className="w-4 h-4 text-[#2B75FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                              </svg>
+                              <span className="text-xs font-semibold text-[#2B75FF] uppercase tracking-wide">
+                                {category.courses || 'PROGRAM'}
+                              </span>
+                            </div>
+                            
+                            {/* Rating */}
+                            <div className="flex items-center gap-1">
+                              <svg className="w-4 h-4 text-orange-500 fill-orange-500" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                              </svg>
+                              <span className="text-sm font-semibold text-orange-500">4.6</span>
+                            </div>
+                          </div>
+
+                          {/* Divider Line */}
+                          <div className="border-t border-gray-200 my-3"></div>
+
+                          {/* Difficulty and Duration Row */}
+                          <div className="flex items-center justify-between">
+                            {/* Difficulty Level */}
+                            <div className="flex items-center gap-1.5">
+                              <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                              </svg>
+                              <span className="text-xs text-gray-600">Intermediate</span>
+                            </div>
+                            
+                            {/* Duration */}
+                            <div className="flex items-center gap-1.5">
+                              <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                              <span className="text-xs text-gray-600">62 hours</span>
+                            </div>
+                          </div>
                         </div>
-
-                        {/* Decorative corner accent */}
-                        <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-[#2B75FF]/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-[#AFCBFF]/10 to-transparent rounded-tr-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       </div>
                     </motion.div>
                   );

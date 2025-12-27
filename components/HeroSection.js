@@ -172,6 +172,9 @@ export default function HeroSection() {
   const programOffered = useCountUp(50, 2000, 1800);
   return (
     <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-white" aria-label="Hero section">
+      {/* Subtle Grid Pattern Overlay */}
+      <div className="absolute inset-0 opacity-[0.08] bg-[linear-gradient(to_right,#2B75FF_1px,transparent_1px),linear-gradient(to_bottom,#2B75FF_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+      
       {/* Animated Background Elements */}
       <motion.div
         className="absolute top-20 left-10 w-72 h-72 bg-[#AFCBFF]/10 rounded-full blur-3xl"
@@ -457,6 +460,7 @@ export default function HeroSection() {
                         src="/HeroSectionIcon/brooke-cagle-g1Kr4Ozfoac-unsplash-removebg-preview.png"
                         alt="Team collaborating and learning together"
                         fill
+                        sizes="176px"
                         className="object-cover"
                         priority
                       />
@@ -503,6 +507,7 @@ export default function HeroSection() {
                         src="/HeroSectionIcon/julio-lopez-bwcO8pN7MS8-unsplash-removebg-preview.png"
                         alt="Person working on laptop"
                         fill
+                        sizes="176px"
                         className="object-cover"
                         priority
                       />
@@ -551,6 +556,7 @@ export default function HeroSection() {
                         src="/HeroSectionIcon/surface-sAsAxFPXwEg-unsplash-removebg-preview.png"
                         alt="Hands typing on laptop"
                         fill
+                        sizes="176px"
                         className="object-cover"
                         priority
                       />

@@ -8,6 +8,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const [isCoursesDropdownOpen, setIsCoursesDropdownOpen] = useState(false);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -76,15 +77,92 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-2">
-            <Link 
-              href="/courses" 
-              className="px-4 py-2 rounded-lg text-white hover:text-white hover:bg-white/20 transition-all duration-200 font-medium text-sm flex items-center space-x-2 group"
+            {/* Courses Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsCoursesDropdownOpen(true)}
+              onMouseLeave={() => setIsCoursesDropdownOpen(false)}
             >
-              <svg className="w-4 h-4 group-hover:text-[#D4AF37] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
-              <span>Courses</span>
-            </Link>
+              <Link 
+                href="/courses" 
+                className="px-4 py-2 rounded-lg text-white hover:text-white hover:bg-white/20 transition-all duration-200 font-medium text-sm flex items-center space-x-2 group"
+              >
+                <svg className="w-4 h-4 group-hover:text-[#D4AF37] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                <span>Courses</span>
+                <svg 
+                  className={`w-4 h-4 transition-transform duration-200 ${isCoursesDropdownOpen ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </Link>
+              
+              {/* Dropdown Menu */}
+              {isCoursesDropdownOpen && (
+                <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                  <div className="p-4 bg-gradient-to-r from-[#2B75FF] to-[#1e5acc] text-white">
+                    <h3 className="font-bold text-lg">Course Categories</h3>
+                    <p className="text-sm text-white/90 mt-1">Explore our comprehensive training programs</p>
+                  </div>
+                  <div className="max-h-96 overflow-y-auto">
+                    {[
+                      { title: 'Cloud Computing', icon: '/images/categoryIcons/computer.png', courses: '12+ Courses' },
+                      { title: 'IT Security', icon: '/images/categoryIcons/encrypted.png', courses: '8+ Courses' },
+                      { title: 'Data Science', icon: '/images/categoryIcons/data-science.png', courses: '10+ Courses' },
+                      { title: 'Project Management', icon: '/images/categoryIcons/mangement.png', courses: '6+ Courses' },
+                      { title: 'Software Testing', icon: '/images/categoryIcons/test.png', courses: '7+ Courses' },
+                      { title: 'Web Development', icon: '/images/categoryIcons/code.png', courses: '15+ Courses' },
+                      { title: 'Salesforce', icon: '/HeroSectionIcon/salesforce.png', courses: '9+ Courses' },
+                      { title: 'Networking', icon: '/images/categoryIcons/computer.png', courses: '5+ Courses' },
+                      { title: 'Cloud Security', icon: '/images/categoryIcons/password.png', courses: '6+ Courses' },
+                      { title: 'Cyber Security', icon: '/images/categoryIcons/cyber-criminal.png', courses: '11+ Courses' },
+                    ].map((category, index) => (
+                      <Link
+                        key={index}
+                        href={`/courses?category=${encodeURIComponent(category.title)}`}
+                        className="flex items-center gap-3 px-4 py-3 hover:bg-[#2B75FF]/5 transition-colors duration-200 border-b border-gray-100 last:border-b-0 group"
+                      >
+                        <div className="w-10 h-10 rounded-lg bg-[#2B75FF]/10 flex items-center justify-center group-hover:bg-[#2B75FF] transition-colors duration-200">
+                          <Image
+                            src={category.icon}
+                            alt={category.title}
+                            width={20}
+                            height={20}
+                            className="w-5 h-5 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-200"
+                          />
+                        </div>
+                        <div className="flex-1">
+                          <p className="font-semibold text-[#0E1C36] group-hover:text-[#2B75FF] transition-colors duration-200">
+                            {category.title}
+                          </p>
+                          <p className="text-xs text-gray-500">{category.courses}</p>
+                        </div>
+                        <svg 
+                          className="w-4 h-4 text-gray-400 group-hover:text-[#2B75FF] group-hover:translate-x-1 transition-all duration-200" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="p-4 bg-gray-50 border-t border-gray-100">
+                    <Link
+                      href="/courses"
+                      className="block w-full text-center px-4 py-2.5 bg-[#2B75FF] text-white rounded-lg font-semibold hover:bg-[#1e5acc] transition-colors duration-200"
+                    >
+                      View All Courses →
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
             <Link 
               href="/about" 
               className="px-4 py-2 rounded-lg text-white hover:text-white hover:bg-white/20 transition-all duration-200 font-medium text-sm flex items-center space-x-2 group"

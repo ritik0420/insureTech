@@ -196,5 +196,51 @@
     animation-delay: 0.6s;
     opacity: 0;
   }
+
+  /* 3D Flip Card Utilities */
+  .flip-card-container {
+    perspective: 1000px;
+  }
+
+  .flip-card-inner {
+    transform-style: preserve-3d;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .backface-hidden {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  .group:hover .group-hover\:rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  /* Slow rotating animation for icon ring */
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+  }
 }
 
