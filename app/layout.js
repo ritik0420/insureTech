@@ -54,7 +54,7 @@ export const metadata = {
     description: 'Transform your IT career with comprehensive training courses. Learn AWS, Azure, DevOps, Cybersecurity, Data Science and more from industry experts.',
     images: [
       {
-        url: '/HeroSectionIcon/logo (2).png',
+        url: '/HeroSectionIcon/LightLogo.png',
         width: 1200,
         height: 630,
         alt: 'InsureTech Skills - IT Training & Certification',
@@ -65,7 +65,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'InsureTech Skills - Professional IT Training & Certification Courses',
     description: 'Transform your IT career with comprehensive training courses. Learn AWS, Azure, DevOps, Cybersecurity, Data Science and more.',
-    images: ['/HeroSectionIcon/logo (2).png'],
+    images: ['/HeroSectionIcon/LightLogo.png'],
     creator: '@insuretechskills',
   },
   robots: {
@@ -98,7 +98,7 @@ export default function RootLayout({ children }) {
     '@type': 'EducationalOrganization',
     name: 'InsureTech Skills',
     url: 'https://insuretechskills.com',
-    logo: 'https://insuretechskills.com/HeroSectionIcon/logo (2).png',
+    logo: 'https://insuretechskills.com/HeroSectionIcon/LightLogo.png',
     description: 'Professional IT training and certification courses provider. Transform your IT career with comprehensive training in AWS, Azure, DevOps, Cybersecurity, Data Science and more.',
     address: {
       '@type': 'PostalAddress',

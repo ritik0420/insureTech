@@ -44,8 +44,8 @@ const cardVariants = {
 
 export default function PopularCoursesSection({ popularCourses = [] }) {
   return (
-    <section
-      className="relative py-24 px-4 sm:px-6 lg:px-8 bg-[#d7f9ff] overflow-hidden"
+    <div
+      className="relative overflow-hidden py-20 md:py-24 lg:py-28"
       aria-labelledby="popular-courses-heading"
     >
       {/* Subtle background pattern echoing hero + category sections */}
@@ -57,7 +57,7 @@ export default function PopularCoursesSection({ popularCourses = [] }) {
 
       <div className="relative max-w-7xl mx-auto z-10">
         <motion.div
-          className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12 md:mb-16"
+          className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8 md:mb-10"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -199,7 +199,7 @@ export default function PopularCoursesSection({ popularCourses = [] }) {
           </motion.div>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 }
 

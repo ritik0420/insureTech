@@ -19,7 +19,7 @@ export const metadata = {
     siteName: 'InsureTech Skills',
     images: [
       {
-        url: '/HeroSectionIcon/logo (2).png',
+        url: '/HeroSectionIcon/LightLogo.png',
         width: 1200,
         height: 630,
         alt: 'InsureTech Skills - IT Training & Certification',

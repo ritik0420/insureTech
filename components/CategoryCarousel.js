@@ -113,7 +113,7 @@ export default function CategoryCarousel({ categories }) {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden" aria-labelledby="course-categories-heading">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden" aria-labelledby="course-categories-heading">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -132,7 +132,7 @@ export default function CategoryCarousel({ categories }) {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           {/* Pagination Indicators */}
           <div className="flex items-center justify-center gap-2 mb-6">
             {Array.from({ length: totalSlides }).map((_, index) => (

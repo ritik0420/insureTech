@@ -9,6 +9,7 @@ export default function Header() {
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [isCoursesDropdownOpen, setIsCoursesDropdownOpen] = useState(false);
+  const [hoveredCategory, setHoveredCategory] = useState(null);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -16,20 +17,34 @@ export default function Header() {
     console.log('Searching for:', searchQuery);
   };
 
+  const courseCategories = [
+    { title: 'Cloud Computing', icon: '/images/categoryIcons/computer.png', courses: '12+ Courses', subcategories: ['AWS Solution Architect Training', 'AWS DevOps Engineer Training', 'AWS SysOps Administrator Training', 'AZ-900: Microsoft Azure Fundamental Training', 'Microsoft Azure Administrator Training', 'Microsoft Azure SQL Solution Training', 'MS Azure Infrastructure Solution Training', 'Terraform Associate Training', 'Azure DevOps Engineer Training', 'Kubernetes Administrator (CKA) Training', 'Google Professional Cloud Architect Training', 'Multi-Cloud DevOps with Generative AI Training'] },
+    { title: 'IT Security', icon: '/images/categoryIcons/encrypted.png', courses: '11+ Courses', subcategories: ['Microsoft Azure Security Engineer Training', 'Certified Ethical Hacker (CEH) Training', 'Certified Cloud Security Professional Training', 'AWS Security Specialty Training', 'CompTIA Cloud+ Training', 'CompTIA Security+ Training', 'SOC Analyst Training', 'GRC Training', 'Cybersecurity Analyst Training', 'Certified Information Systems Security Professional Training', 'AI-powered CEH v13 Hands-on Training'] },
+    { title: 'Data Science', icon: '/images/categoryIcons/data-science.png', courses: '4+ Courses', subcategories: ['Microsoft Azure Data Fundamental Training', 'Microsoft Azure Data Scientist Training', 'Microsoft Azure Power BI Training', 'Tableau Certified Data Analyst Training'] },
+    { title: 'Project Management', icon: '/images/categoryIcons/mangement.png', courses: '5+ Courses', subcategories: ['PMP Training', 'Jira Training', 'Leading SAFe 6.0 Agilist Certification Training', 'Certified Scrum Master (CSM) Training', 'PRINCE2 Foundation and Practitioner Training'] },
+    { title: 'Software Testing', icon: '/images/categoryIcons/test.png', courses: '2+ Courses', subcategories: ['Selenium (Java) Training', 'Manual Testing Training'] },
+    { title: 'Web Development', icon: '/images/categoryIcons/code.png', courses: '4+ Courses', subcategories: ['React Js Training', 'Python Training', 'Java Training', 'Angular Training'] },
+    { title: 'Salesforce', icon: '/HeroSectionIcon/salesforce.png', courses: '3+ Courses', subcategories: ['Salesforce Administrator Training', 'Salesforce Platform App Builder Training', 'Salesforce Developer Training'] },
+    { title: 'Networking', icon: '/images/categoryIcons/computer.png', courses: '2+ Courses', subcategories: ['CompTIA Network+ Training', 'CISCO CCNA Training'] },
+  ];
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#1F4FD8] backdrop-blur-md shadow-lg font-dm-sans font-medium" style={{ borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl font-dm-sans font-medium" style={{ 
+      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.12), inset 0 -1px 0 rgba(0, 0, 0, 0.05)',
+      borderBottom: '1px solid rgba(0,0,0,0.08)'
+    }}>
       <nav className="max-w-7xl mx-auto pl-4 pr-4 sm:pl-6 sm:pr-6 lg:pl-8 lg:pr-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <div className="relative h-28 sm:h-28 md:h-32 lg:h-36 w-auto flex items-center justify-center transition-all duration-300 group-hover:scale-105">
               <Image
-                src="/HeroSectionIcon/logo (2).png"
+                src="/HeroSectionIcon/insuretech logo (1).png"
                 alt="insureTech Skills Logo"
                 width={300}
                 height={100}
-                className="h-full w-auto object-contain drop-shadow-lg shadow-white/50"
-                style={{ filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3)) drop-shadow(0 2px 4px rgba(255, 255, 255, 0.2))' }}
+                className="h-full w-auto object-contain"
+                style={{ filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1))' }}
                 priority
               />
             </div>
@@ -38,13 +53,13 @@ export default function Header() {
           {/* Desktop Search Bar */}
           <div className="hidden lg:flex flex-1 max-w-md mx-8">
             <form onSubmit={handleSearch} className="w-full relative">
-              <div className={`relative flex items-center bg-white rounded-xl border transition-all duration-300 ${
+              <div className={`relative flex items-center bg-gray-100 rounded-xl border transition-all duration-300 ${
                 isSearchFocused 
-                  ? 'border-[#60a5fa] shadow-lg shadow-[#60a5fa]/20 bg-white' 
-                  : 'border-[#d7f9ff]/50 hover:border-[#d7f9ff]'
+                  ? 'border-gray-300 shadow-md bg-gray-50' 
+                  : 'border-gray-200 hover:border-gray-300 shadow-sm'
               }`}>
                 <svg 
-                  className="w-5 h-5 text-[#2B75FF] ml-4" 
+                  className="w-5 h-5 text-gray-500 ml-4" 
                   fill="none" 
                   stroke="currentColor" 
                   viewBox="0 0 24 24"
@@ -64,7 +79,7 @@ export default function Header() {
                   <button
                     type="button"
                     onClick={() => setSearchQuery('')}
-                    className="mr-3 p-1 rounded-lg hover:bg-[#d7f9ff]/20 transition-colors"
+                    className="mr-3 p-1 rounded-lg hover:bg-gray-200 transition-colors"
                   >
                     <svg className="w-4 h-4 text-[#0E1C36]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -80,17 +95,25 @@ export default function Header() {
             {/* Courses Dropdown */}
             <div 
               className="relative"
-              onMouseEnter={() => setIsCoursesDropdownOpen(true)}
-              onMouseLeave={() => setIsCoursesDropdownOpen(false)}
+              onMouseEnter={() => {
+                setIsCoursesDropdownOpen(true);
+                if (hoveredCategory === null) {
+                  setHoveredCategory(0);
+                }
+              }}
+              onMouseLeave={() => {
+                setIsCoursesDropdownOpen(false);
+                setHoveredCategory(null);
+              }}
             >
               <Link 
                 href="/courses" 
-                className="px-4 py-2 rounded-lg text-white hover:text-white hover:bg-white/20 transition-all duration-200 font-medium text-sm flex items-center space-x-2 group"
+                className="px-4 py-2 rounded-lg text-[#0E1C36] hover:text-[#2B75FF] hover:bg-[#2B75FF]/10 transition-all duration-200 font-medium text-sm flex items-center space-x-2 group"
               >
                 <svg className="w-4 h-4 group-hover:text-[#D4AF37] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
-                <span>Courses</span>
+                <span>Explore Courses</span>
                 <svg 
                   className={`w-4 h-4 transition-transform duration-200 ${isCoursesDropdownOpen ? 'rotate-180' : ''}`} 
                   fill="none" 
@@ -103,69 +126,94 @@ export default function Header() {
               
               {/* Dropdown Menu */}
               {isCoursesDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-200">
-                  <div className="p-4 bg-gradient-to-r from-[#2B75FF] to-[#1e5acc] text-white">
-                    <h3 className="font-bold text-lg">Course Categories</h3>
-                    <p className="text-sm text-white/90 mt-1">Explore our comprehensive training programs</p>
-                  </div>
-                  <div className="max-h-96 overflow-y-auto">
-                    {[
-                      { title: 'Cloud Computing', icon: '/images/categoryIcons/computer.png', courses: '12+ Courses' },
-                      { title: 'IT Security', icon: '/images/categoryIcons/encrypted.png', courses: '8+ Courses' },
-                      { title: 'Data Science', icon: '/images/categoryIcons/data-science.png', courses: '10+ Courses' },
-                      { title: 'Project Management', icon: '/images/categoryIcons/mangement.png', courses: '6+ Courses' },
-                      { title: 'Software Testing', icon: '/images/categoryIcons/test.png', courses: '7+ Courses' },
-                      { title: 'Web Development', icon: '/images/categoryIcons/code.png', courses: '15+ Courses' },
-                      { title: 'Salesforce', icon: '/HeroSectionIcon/salesforce.png', courses: '9+ Courses' },
-                      { title: 'Networking', icon: '/images/categoryIcons/computer.png', courses: '5+ Courses' },
-                      { title: 'Cloud Security', icon: '/images/categoryIcons/password.png', courses: '6+ Courses' },
-                      { title: 'Cyber Security', icon: '/images/categoryIcons/cyber-criminal.png', courses: '11+ Courses' },
-                    ].map((category, index) => (
-                      <Link
-                        key={index}
-                        href={`/courses?category=${encodeURIComponent(category.title)}`}
-                        className="flex items-center gap-3 px-4 py-3 hover:bg-[#2B75FF]/5 transition-colors duration-200 border-b border-gray-100 last:border-b-0 group"
-                      >
-                        <div className="w-10 h-10 rounded-lg bg-[#2B75FF]/10 flex items-center justify-center group-hover:bg-[#2B75FF] transition-colors duration-200">
-                          <Image
-                            src={category.icon}
-                            alt={category.title}
-                            width={20}
-                            height={20}
-                            className="w-5 h-5 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-200"
-                          />
+                <div 
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] bg-white rounded-lg shadow-2xl border border-gray-200 overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-200"
+                  onMouseEnter={() => setIsCoursesDropdownOpen(true)}
+                  onMouseLeave={() => {
+                    setIsCoursesDropdownOpen(false);
+                    setHoveredCategory(null);
+                  }}
+                >
+                  <div className="flex">
+                    {/* Left Sidebar */}
+                    <div className="w-[280px] border-r border-gray-200 max-h-[600px] overflow-y-auto">
+                      {/* COURSE CATEGORIES Section */}
+                      <div className="p-4">
+                        <div className="flex items-center justify-between mb-3">
+                          <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">COURSE CATEGORIES</h3>
+                          <Link href="/courses" className="text-sm font-medium text-green-600 hover:text-green-700">
+                            View All Free Courses
+                          </Link>
                         </div>
-                        <div className="flex-1">
-                          <p className="font-semibold text-[#0E1C36] group-hover:text-[#2B75FF] transition-colors duration-200">
-                            {category.title}
-                          </p>
-                          <p className="text-xs text-gray-500">{category.courses}</p>
+                        <div className="space-y-1">
+                          {courseCategories.map((category, index) => (
+                            <div
+                              key={index}
+                              className="relative"
+                              onMouseEnter={() => setHoveredCategory(index)}
+                            >
+                              <Link
+                                href={`/courses?category=${encodeURIComponent(category.title)}`}
+                                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors group ${
+                                  hoveredCategory === index ? 'bg-blue-50' : 'hover:bg-gray-50'
+                                }`}
+                              >
+                                <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
+                                  <Image
+                                    src={category.icon}
+                                    alt={category.title}
+                                    width={24}
+                                    height={24}
+                                    className="w-6 h-6 object-contain"
+                                  />
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <p className={`font-medium text-sm ${hoveredCategory === index ? 'text-blue-600' : 'text-gray-900'} transition-colors truncate`}>
+                                    {category.title}
+                                  </p>
+                                  <p className="text-xs text-gray-500">({category.courses})</p>
+                                </div>
+                                <svg 
+                                  className="w-4 h-4 text-gray-400 flex-shrink-0" 
+                                  fill="none" 
+                                  stroke="currentColor" 
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                              </Link>
+                            </div>
+                          ))}
                         </div>
-                        <svg 
-                          className="w-4 h-4 text-gray-400 group-hover:text-[#2B75FF] group-hover:translate-x-1 transition-all duration-200" 
-                          fill="none" 
-                          stroke="currentColor" 
-                          viewBox="0 0 24 24"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </Link>
-                    ))}
-                  </div>
-                  <div className="p-4 bg-gray-50 border-t border-gray-100">
-                    <Link
-                      href="/courses"
-                      className="block w-full text-center px-4 py-2.5 bg-[#2B75FF] text-white rounded-lg font-semibold hover:bg-[#1e5acc] transition-colors duration-200"
-                    >
-                      View All Courses →
-                    </Link>
+                      </div>
+                    </div>
+
+                    {/* Right Side - Subcategories */}
+                    {hoveredCategory !== null && courseCategories[hoveredCategory] && (
+                      <div className="flex-1 p-6 max-h-[600px] overflow-y-auto">
+                        <h3 className="text-lg font-semibold text-blue-600 mb-4">
+                          View Top {courseCategories[hoveredCategory].title} Courses
+                        </h3>
+                        <div className="grid grid-cols-1 gap-2">
+                          {courseCategories[hoveredCategory].subcategories.map((subcategory, subIndex) => (
+                            <Link
+                              key={subIndex}
+                              href={`/courses?category=${encodeURIComponent(courseCategories[hoveredCategory].title)}&subcategory=${encodeURIComponent(subcategory)}`}
+                              className="text-gray-700 hover:text-blue-600 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-sm font-medium"
+                            >
+                              {subcategory}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               )}
             </div>
             <Link 
               href="/about" 
-              className="px-4 py-2 rounded-lg text-white hover:text-white hover:bg-white/20 transition-all duration-200 font-medium text-sm flex items-center space-x-2 group"
+              className="px-4 py-2 rounded-lg text-[#0E1C36] hover:text-[#2B75FF] hover:bg-[#2B75FF]/10 transition-all duration-200 font-medium text-sm flex items-center space-x-2 group"
             >
               <svg className="w-4 h-4 group-hover:text-[#D4AF37] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -174,7 +222,7 @@ export default function Header() {
             </Link>
             <Link 
               href="/blog" 
-              className="px-4 py-2 rounded-lg text-white hover:text-white hover:bg-white/20 transition-all duration-200 font-medium text-sm flex items-center space-x-2 group"
+              className="px-4 py-2 rounded-lg text-[#0E1C36] hover:text-[#2B75FF] hover:bg-[#2B75FF]/10 transition-all duration-200 font-medium text-sm flex items-center space-x-2 group"
             >
               <svg className="w-4 h-4 group-hover:text-[#D4AF37] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
@@ -183,7 +231,7 @@ export default function Header() {
             </Link>
             <Link
               href="/contact"
-              className="px-4 py-2 rounded-lg text-white hover:text-white hover:bg-white/20 transition-all duration-200 font-medium text-sm flex items-center space-x-2 group"
+              className="px-4 py-2 rounded-lg text-[#0E1C36] hover:text-[#2B75FF] hover:bg-[#2B75FF]/10 transition-all duration-200 font-medium text-sm flex items-center space-x-2 group"
             >
               <svg className="w-4 h-4 group-hover:text-[#D4AF37] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -205,7 +253,7 @@ export default function Header() {
           <div className="md:hidden flex items-center space-x-2">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-lg text-white hover:bg-white/20 transition-colors"
+              className="p-2 rounded-lg text-[#0E1C36] hover:bg-[#2B75FF]/10 transition-colors"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isMenuOpen ? (
@@ -220,16 +268,16 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 space-y-2 border-t border-gray-200">
+          <div className="md:hidden py-4 space-y-2 border-t border-gray-200/50">
             {/* Mobile Search */}
             <form onSubmit={handleSearch} className="mb-4">
-              <div className={`relative flex items-center bg-white rounded-xl border transition-all duration-300 ${
+              <div className={`relative flex items-center bg-gray-100 rounded-xl border transition-all duration-300 ${
                 isSearchFocused 
-                  ? 'border-[#60a5fa] shadow-lg shadow-[#60a5fa]/20 bg-white' 
-                  : 'border-[#d7f9ff]/50'
+                  ? 'border-gray-300 shadow-md bg-gray-50' 
+                  : 'border-gray-200 shadow-sm'
               }`}>
                 <svg 
-                  className="w-5 h-5 text-[#2B75FF] ml-4" 
+                  className="w-5 h-5 text-gray-500 ml-4" 
                   fill="none" 
                   stroke="currentColor" 
                   viewBox="0 0 24 24"
@@ -249,7 +297,7 @@ export default function Header() {
                   <button
                     type="button"
                     onClick={() => setSearchQuery('')}
-                    className="mr-3 p-1 rounded-lg hover:bg-[#d7f9ff]/20 transition-colors"
+                    className="mr-3 p-1 rounded-lg hover:bg-gray-200 transition-colors"
                   >
                     <svg className="w-4 h-4 text-[#0E1C36]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -262,17 +310,17 @@ export default function Header() {
             {/* Mobile Navigation Links */}
             <Link 
               href="/courses" 
-              className="flex items-center space-x-3 px-4 py-3 rounded-lg text-white hover:text-white hover:bg-white/20 transition-all duration-200 font-medium group"
+              className="flex items-center space-x-3 px-4 py-3 rounded-lg text-[#0E1C36] hover:text-[#2B75FF] hover:bg-[#2B75FF]/10 transition-all duration-200 font-medium group"
               onClick={() => setIsMenuOpen(false)}
             >
-              <svg className="w-5 h-5 group-hover:text-[#D4AF37] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 group-hover:text-[#2B75FF] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
               </svg>
               <span>Courses</span>
             </Link>
             <Link 
               href="/about" 
-              className="flex items-center space-x-3 px-4 py-3 rounded-lg text-white hover:text-white hover:bg-white/20 transition-all duration-200 font-medium group"
+              className="flex items-center space-x-3 px-4 py-3 rounded-lg text-[#0E1C36] hover:text-[#2B75FF] hover:bg-[#2B75FF]/10 transition-all duration-200 font-medium group"
               onClick={() => setIsMenuOpen(false)}
             >
               <svg className="w-5 h-5 group-hover:text-[#D4AF37] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -282,20 +330,20 @@ export default function Header() {
             </Link>
             <Link 
               href="/blog" 
-              className="flex items-center space-x-3 px-4 py-3 rounded-lg text-white hover:text-white hover:bg-white/20 transition-all duration-200 font-medium group"
+              className="flex items-center space-x-3 px-4 py-3 rounded-lg text-[#0E1C36] hover:text-[#2B75FF] hover:bg-[#2B75FF]/10 transition-all duration-200 font-medium group"
               onClick={() => setIsMenuOpen(false)}
             >
-              <svg className="w-5 h-5 group-hover:text-[#D4AF37] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 group-hover:text-[#2B75FF] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
               </svg>
               <span>Blog</span>
             </Link>
             <Link 
               href="/contact" 
-              className="flex items-center space-x-3 px-4 py-3 rounded-lg text-white hover:text-white hover:bg-white/20 transition-all duration-200 font-medium group"
+              className="flex items-center space-x-3 px-4 py-3 rounded-lg text-[#0E1C36] hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-all duration-200 font-medium group"
               onClick={() => setIsMenuOpen(false)}
             >
-              <svg className="w-5 h-5 group-hover:text-[#D4AF37] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 group-hover:text-[#2B75FF] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               <span>Contact Us</span>
