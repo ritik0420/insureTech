@@ -8,6 +8,7 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 import Button from '@/components/Button';
 import CourseCard from '@/components/CourseCard';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 
@@ -626,7 +627,7 @@ export default function CoursesPage() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto mb-8 leading-relaxed"
               >
-                Discover a variety of courses across different fields designed to help you learn new skills, expand your knowledge, and achieve your career goals. Whether you're looking to dive deep into programming, master business strategies, explore creative arts, or hone your technical expertise, we have something for everyone.
+                Discover a variety of courses across different fields designed to help you learn new skills, expand your knowledge, and achieve your career goals. Whether you&apos;re looking to dive deep into programming, master business strategies, explore creative arts, or hone your technical expertise, we have something for everyone.
               </motion.p>
 
               {selectedCategory && (
@@ -636,7 +637,7 @@ export default function CoursesPage() {
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 mb-6"
                 >
                   <span className="text-white font-semibold">Filtered by: {selectedCategory}</span>
-                  <a
+                  <Link
                     href="/courses"
                     className="text-white/80 hover:text-white transition-colors"
                     aria-label="Clear filter"
@@ -644,7 +645,7 @@ export default function CoursesPage() {
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
-                  </a>
+                  </Link>
                 </motion.div>
               )}
 
