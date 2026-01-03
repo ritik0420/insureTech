@@ -17,31 +17,31 @@ module.exports = {
       },
       colors: {
         // Primary Theme Colors (from HeroSection and Header)
-        'primary-blue': '#2B75FF', // Primary blue - main brand color
-        'dark-navy': '#0E1C36', // Dark navy - headings, text, dark sections
+        'primary-blue': '#1199B6', // Vibrant Teal - main brand color
+        'dark-navy': '#0C1A2B', // Deep Navy - headings, text, dark sections
         'gold': '#D4AF37', // Gold accent - hover states, highlights
-        'light-blue': '#AFCBFF', // Light blue - accents, backgrounds
+        'light-blue': '#1199B6', // Teal - accents, backgrounds
         'light-teal': '#d7f9ff', // Light teal - backgrounds, borders
         
         // Legacy mappings for backward compatibility
-        teal: '#AFCBFF', // Light Blue - Buttons, highlights, links
-        navy: '#0E1C36', // Dark Navy - Headings, navbar text
-        'light-teal': '#d7f9ff', // Light Blue - Background sections
+        teal: '#1199B6', // Vibrant Teal - Buttons, highlights, links
+        navy: '#0C1A2B', // Deep Navy - Headings, navbar text
+        'light-teal': '#d7f9ff', // Light Teal - Background sections
         white: '#FFFFFF', // White backgrounds
         
         // Legacy support (mapped to theme colors)
         primary: {
-          DEFAULT: '#2B75FF',
+          DEFAULT: '#1199B6',
           50: '#d7f9ff',
           100: '#d7f9ff',
-          200: '#AFCBFF',
-          300: '#AFCBFF',
-          400: '#2B75FF',
-          500: '#2B75FF',
-          600: '#2B75FF',
-          700: '#0E1C36',
-          800: '#0E1C36',
-          900: '#0E1C36',
+          200: '#1199B6',
+          300: '#1199B6',
+          400: '#1199B6',
+          500: '#1199B6',
+          600: '#1199B6',
+          700: '#0C1A2B',
+          800: '#0C1A2B',
+          900: '#0C1A2B',
         },
       },
       borderRadius: {

@@ -50,8 +50,8 @@ export default function PopularCoursesSection({ popularCourses = [] }) {
     >
       {/* Subtle background pattern echoing hero + category sections */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-24 -right-10 w-80 h-80 bg-[#2B75FF]/15 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 -left-16 w-[26rem] h-[26rem] bg-[#0E1C36]/10 rounded-full blur-3xl" />
+        <div className="absolute -top-24 -right-10 w-80 h-80 bg-[#1199B6]/15 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 -left-16 w-[26rem] h-[26rem] bg-[#0C1A2B]/10 rounded-full blur-3xl" />
         <div className="absolute inset-x-10 top-32 h-40 bg-gradient-to-r from-white/60 via-white/30 to-white/60 rounded-[3rem] blur-2xl" />
       </div>
 
@@ -66,18 +66,18 @@ export default function PopularCoursesSection({ popularCourses = [] }) {
           <div className="max-w-2xl">
             {/* Section eyebrow / badge */}
             <div className="inline-flex items-center gap-2 mb-4 rounded-full bg-white/70 px-3 py-1 shadow-sm border border-white/80 backdrop-blur">
-              <span className="w-2 h-2 bg-[#2B75FF] rounded-full animate-pulse" />
-              <span className="text-xs sm:text-sm font-semibold text-[#2B75FF] uppercase tracking-[0.18em]">
+              <span className="w-2 h-2 bg-[#1199B6] rounded-full animate-pulse" />
+              <span className="text-xs sm:text-sm font-semibold text-[#1199B6] uppercase tracking-[0.18em]">
                 Most Popular
               </span>
             </div>
 
             <h2
               id="popular-courses-heading"
-              className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-[#0E1C36] leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-[#0C1A2B] leading-tight"
             >
               Explore Our{' '}
-              <span className="bg-gradient-to-r from-[#2B75FF] to-[#1e5acc] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#1199B6] to-[#0e7a8f] bg-clip-text text-transparent">
                 Popular Courses
               </span>
             </h2>
@@ -103,7 +103,7 @@ export default function PopularCoursesSection({ popularCourses = [] }) {
                   />
                 </motion.div>
                 <span className="text-sm sm:text-base text-gray-700 whitespace-nowrap">
-                  <span className="font-semibold text-[#0E1C36]">98% Success rate</span>
+                  <span className="font-semibold text-[#0C1A2B]">98% Success rate</span>
                 </span>
               </div>
               <div className="flex items-center gap-3 px-4 py-2 rounded-2xl bg-white/80 border border-[#d7f9ff] shadow-sm">
@@ -121,7 +121,7 @@ export default function PopularCoursesSection({ popularCourses = [] }) {
                   />
                 </motion.div>
                 <span className="text-sm sm:text-base text-gray-700 whitespace-nowrap">
-                  <span className="font-semibold text-[#0E1C36]">20k+ Students trained</span>
+                  <span className="font-semibold text-[#0C1A2B]">20k+ Students trained</span>
                 </span>
               </div>
             </div>
@@ -158,13 +158,13 @@ export default function PopularCoursesSection({ popularCourses = [] }) {
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.35, ease: 'easeOut' }}
             >
-              <span className="px-3 py-1 rounded-full bg-[#2B75FF]/10 text-[#2B75FF] font-semibold">
+              <span className="px-3 py-1 rounded-full bg-[#1199B6]/10 text-[#1199B6] font-semibold">
                 Cloud &amp; DevOps
               </span>
-              <span className="px-3 py-1 rounded-full bg-[#0E1C36]/5 text-[#0E1C36] font-semibold">
+              <span className="px-3 py-1 rounded-full bg-[#0C1A2B]/5 text-[#0C1A2B] font-semibold">
                 Data &amp; Analytics
               </span>
-              <span className="px-3 py-1 rounded-full bg-[#2B75FF]/5 text-[#2B75FF] font-semibold">
+              <span className="px-3 py-1 rounded-full bg-[#1199B6]/5 text-[#1199B6] font-semibold">
                 Security
               </span>
             </motion.div>

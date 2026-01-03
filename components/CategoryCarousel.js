@@ -125,9 +125,9 @@ export default function CategoryCarousel({ categories }) {
           priority
         />
         {/* Dark overlay for text visibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0E1C36]/85 via-[#0E1C36]/80 to-[#0E1C36]/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0C1A2B]/85 via-[#0C1A2B]/80 to-[#0C1A2B]/85"></div>
         {/* Additional subtle gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2B75FF]/10 via-transparent to-[#AFCBFF]/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1199B6]/10 via-transparent to-[#1199B6]/10"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -141,7 +141,7 @@ export default function CategoryCarousel({ categories }) {
                 onClick={() => goToSlide(index)}
                 className={`transition-all duration-300 ${
                   index === currentIndex
-                    ? 'w-8 h-2 bg-[#2B75FF] rounded-full shadow-lg shadow-[#2B75FF]/50'
+                    ? 'w-8 h-2 bg-[#1199B6] rounded-full shadow-lg shadow-[#1199B6]/50'
                     : 'w-2 h-2 bg-white/40 rounded-full hover:bg-white/60 backdrop-blur-sm'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
@@ -194,11 +194,11 @@ export default function CategoryCarousel({ categories }) {
           {/* Navigation Arrows */}
           <button
             onClick={goToPrevious}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-md shadow-2xl border-2 border-white/50 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-[#2B75FF] hover:border-[#2B75FF] hover:shadow-2xl hover:shadow-[#2B75FF]/50 group"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-md shadow-2xl border-2 border-white/50 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-[#1199B6] hover:border-[#1199B6] hover:shadow-2xl hover:shadow-[#1199B6]/50 group"
             aria-label="Previous categories"
           >
             <svg
-              className="w-6 h-6 text-[#2B75FF] group-hover:text-white transition-colors"
+              className="w-6 h-6 text-[#1199B6] group-hover:text-white transition-colors"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -214,11 +214,11 @@ export default function CategoryCarousel({ categories }) {
 
           <button
             onClick={goToNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-md shadow-2xl border-2 border-white/50 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-[#2B75FF] hover:border-[#2B75FF] hover:shadow-2xl hover:shadow-[#2B75FF]/50 group"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-md shadow-2xl border-2 border-white/50 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-[#1199B6] hover:border-[#1199B6] hover:shadow-2xl hover:shadow-[#1199B6]/50 group"
             aria-label="Next categories"
           >
             <svg
-              className="w-6 h-6 text-[#2B75FF] group-hover:text-white transition-colors"
+              className="w-6 h-6 text-[#1199B6] group-hover:text-white transition-colors"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -276,13 +276,13 @@ export default function CategoryCarousel({ categories }) {
                             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                           />
                           {/* Dark overlay for better contrast */}
-                          <div className="absolute inset-0 bg-gradient-to-b from-[#0E1C36]/60 via-[#0E1C36]/40 to-[#0E1C36]/60"></div>
+                          <div className="absolute inset-0 bg-gradient-to-b from-[#0C1A2B]/60 via-[#0C1A2B]/40 to-[#0C1A2B]/60"></div>
                           {/* Futuristic Grid Pattern Overlay */}
                           <div className="absolute inset-0 opacity-20">
                             <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                               <defs>
                                 <pattern id={`grid-pattern-${globalIndex}`} width="20" height="20" patternUnits="userSpaceOnUse">
-                                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#2B75FF" strokeWidth="1"/>
+                                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1199B6" strokeWidth="1"/>
                                 </pattern>
                               </defs>
                               <rect width="100%" height="100%" fill={`url(#grid-pattern-${globalIndex})`} />
@@ -290,16 +290,16 @@ export default function CategoryCarousel({ categories }) {
                           </div>
                           {/* Additional horizontal and vertical lines */}
                           <div className="absolute inset-0">
-                            <div className="absolute top-1/4 left-0 right-0 h-px bg-[#2B75FF] opacity-30"></div>
-                            <div className="absolute top-1/2 left-0 right-0 h-px bg-[#2B75FF] opacity-30"></div>
-                            <div className="absolute top-3/4 left-0 right-0 h-px bg-[#2B75FF] opacity-30"></div>
-                            <div className="absolute left-1/4 top-0 bottom-0 w-px bg-[#2B75FF] opacity-30"></div>
-                            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[#2B75FF] opacity-30"></div>
-                            <div className="absolute left-3/4 top-0 bottom-0 w-px bg-[#2B75FF] opacity-30"></div>
+                            <div className="absolute top-1/4 left-0 right-0 h-px bg-[#1199B6] opacity-30"></div>
+                            <div className="absolute top-1/2 left-0 right-0 h-px bg-[#1199B6] opacity-30"></div>
+                            <div className="absolute top-3/4 left-0 right-0 h-px bg-[#1199B6] opacity-30"></div>
+                            <div className="absolute left-1/4 top-0 bottom-0 w-px bg-[#1199B6] opacity-30"></div>
+                            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[#1199B6] opacity-30"></div>
+                            <div className="absolute left-3/4 top-0 bottom-0 w-px bg-[#1199B6] opacity-30"></div>
                           </div>
                           
                           {/* Blue Square Icon with White Icon in bottom-left */}
-                          <div className="absolute bottom-3 left-3 w-10 h-10 bg-[#2B75FF] rounded flex items-center justify-center shadow-lg z-10">
+                          <div className="absolute bottom-3 left-3 w-10 h-10 bg-[#1199B6] rounded flex items-center justify-center shadow-lg z-10">
                             <div className="relative w-6 h-6">
                               <Image
                                 src={category.icon}
@@ -315,7 +315,7 @@ export default function CategoryCarousel({ categories }) {
                         {/* Content Section */}
                         <div className="p-4 md:p-5">
                           {/* Title - Large, Bold Blue */}
-                          <h3 className="text-xl md:text-2xl font-bold text-[#2B75FF] mb-2 leading-tight">
+                          <h3 className="text-xl md:text-2xl font-bold text-[#1199B6] mb-2 leading-tight">
                             {category.title}
                           </h3>
 
@@ -330,10 +330,10 @@ export default function CategoryCarousel({ categories }) {
                           <div className="flex items-center justify-between mb-3">
                             {/* Program Type */}
                             <div className="flex items-center gap-1.5">
-                              <svg className="w-4 h-4 text-[#2B75FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="w-4 h-4 text-[#1199B6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                               </svg>
-                              <span className="text-xs font-semibold text-[#2B75FF] uppercase tracking-wide">
+                              <span className="text-xs font-semibold text-[#1199B6] uppercase tracking-wide">
                                 {category.courses || 'PROGRAM'}
                               </span>
                             </div>
@@ -386,7 +386,7 @@ export default function CategoryCarousel({ categories }) {
               onClick={() => goToSlide(index)}
               className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 backdrop-blur-sm ${
                 index === currentIndex
-                  ? 'bg-[#2B75FF] text-white shadow-lg shadow-[#2B75FF]/50'
+                  ? 'bg-[#1199B6] text-white shadow-lg shadow-[#1199B6]/50'
                   : 'bg-white/20 text-white hover:bg-white/30 border border-white/30'
               }`}
               aria-label={`Go to slide ${index + 1}`}

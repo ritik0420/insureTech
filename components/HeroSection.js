@@ -173,11 +173,11 @@ export default function HeroSection() {
   return (
     <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-white" aria-label="Hero section">
       {/* Subtle Grid Pattern Overlay */}
-      <div className="absolute inset-0 opacity-[0.08] bg-[linear-gradient(to_right,#2B75FF_1px,transparent_1px),linear-gradient(to_bottom,#2B75FF_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+      <div className="absolute inset-0 opacity-[0.08] bg-[linear-gradient(to_right,#1199B6_1px,transparent_1px),linear-gradient(to_bottom,#1199B6_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
       
       {/* Animated Background Elements */}
       <motion.div
-        className="absolute top-20 left-10 w-72 h-72 bg-[#AFCBFF]/10 rounded-full blur-3xl"
+        className="absolute top-20 left-10 w-72 h-72 bg-[#1199B6]/10 rounded-full blur-3xl"
         animate={{
           scale: [1, 1.2, 1],
           x: [0, 50, 0],
@@ -190,7 +190,7 @@ export default function HeroSection() {
         }}
       />
       <motion.div
-        className="absolute bottom-20 right-10 w-96 h-96 bg-[#0E1C36]/5 rounded-full blur-3xl"
+        className="absolute bottom-20 right-10 w-96 h-96 bg-[#0C1A2B]/5 rounded-full blur-3xl"
         animate={{
           scale: [1, 1.3, 1],
           x: [0, -40, 0],
@@ -203,7 +203,7 @@ export default function HeroSection() {
         }}
       />
       <motion.div
-        className="absolute top-1/2 left-1/4 w-48 h-48 bg-[#AFCBFF]/10 rounded-full blur-2xl"
+        className="absolute top-1/2 left-1/4 w-48 h-48 bg-[#1199B6]/10 rounded-full blur-2xl"
         animate={{
           scale: [1, 1.4, 1],
           rotate: [0, 180, 360],
@@ -226,7 +226,7 @@ export default function HeroSection() {
               className="text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight"
             >
               <motion.span
-                className="inline-block text-[#0E1C36]"
+                className="inline-block text-[#0C1A2B]"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -272,7 +272,7 @@ export default function HeroSection() {
               )}
             </motion.p>
             <motion.p
-              className="text-[#0E1C36] mb-4 leading-relaxed max-w-[65ch]"
+              className="text-[#0C1A2B] mb-4 leading-relaxed max-w-[65ch]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
@@ -337,7 +337,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.4 }}
             >
-              <p className="text-sm font-semibold text-[#0E1C36] mb-4">Why partner With insureTech?</p>
+              <p className="text-sm font-semibold text-[#0C1A2B] mb-4">Why partner With insureTech?</p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <motion.div
                   className="text-center"
@@ -590,7 +590,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
         >
-          <h3 className="text-center text-xl md:text-2xl font-bold text-[#0E1C36] mb-3">
+          <h3 className="text-center text-xl md:text-2xl font-bold text-[#0C1A2B] mb-3">
             Discover Latest AI-Powered Learning Trends & Insights
           </h3>
           <p className="text-center text-sm md:text-base text-gray-600 mb-8 max-w-2xl mx-auto">

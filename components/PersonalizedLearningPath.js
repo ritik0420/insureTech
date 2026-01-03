@@ -98,7 +98,7 @@ export default function PersonalizedLearningPath() {
     >
       {/* Animated Background Elements */}
       <motion.div
-        className="absolute top-20 left-10 w-72 h-72 bg-[#2B75FF]/10 rounded-full blur-3xl"
+        className="absolute top-20 left-10 w-72 h-72 bg-[#1199B6]/10 rounded-full blur-3xl"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3],
@@ -138,18 +138,18 @@ export default function PersonalizedLearningPath() {
             transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
           >
             <motion.span 
-              className="w-2 h-2 bg-[#2B75FF] rounded-full"
+              className="w-2 h-2 bg-[#1199B6] rounded-full"
               animate={{ scale: [1, 1.5, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
-            <span className="text-sm font-semibold text-[#2B75FF] uppercase tracking-wider">
+            <span className="text-sm font-semibold text-[#1199B6] uppercase tracking-wider">
               Your Success Journey
             </span>
           </motion.div>
 
           <motion.h2 
             id="learning-path-heading" 
-            className="text-5xl md:text-6xl font-bold mb-6 text-[#0E1C36]"
+            className="text-5xl md:text-6xl font-bold mb-6 text-[#0C1A2B]"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -158,7 +158,7 @@ export default function PersonalizedLearningPath() {
           </motion.h2>
           
           <motion.div 
-            className="w-32 h-1 bg-gradient-to-r from-[#2B75FF] to-purple-500 mx-auto rounded-full mb-6"
+            className="w-32 h-1 bg-gradient-to-r from-[#1199B6] to-purple-500 mx-auto rounded-full mb-6"
             initial={{ width: 0 }}
             animate={isInView ? { width: 128 } : {}}
             transition={{ duration: 1, delay: 0.4 }}
@@ -189,7 +189,7 @@ export default function PersonalizedLearningPath() {
               transition={{ duration: 0.3 }}
             >
               {/* Image Container */}
-              <div className="relative aspect-[4/5] bg-gradient-to-br from-[#2B75FF]/20 to-purple-500/20">
+              <div className="relative aspect-[4/5] bg-gradient-to-br from-[#1199B6]/20 to-purple-500/20">
                 <Image
                   src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&h=1500&fit=crop&q=90"
                   alt="Professional team collaborating on personalized learning journey"
@@ -198,12 +198,12 @@ export default function PersonalizedLearningPath() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0E1C36]/80 via-[#0E1C36]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0C1A2B]/80 via-[#0C1A2B]/40 to-transparent" />
                 </div>
 
               {/* Decorative Elements */}
               <motion.div
-                className="absolute -top-6 -left-6 w-24 h-24 bg-[#2B75FF]/20 rounded-full blur-2xl"
+                className="absolute -top-6 -left-6 w-24 h-24 bg-[#1199B6]/20 rounded-full blur-2xl"
                 animate={{
                   scale: [1, 1.3, 1],
                   opacity: [0.5, 0.8, 0.5],
@@ -236,7 +236,7 @@ export default function PersonalizedLearningPath() {
 
         {/* Bottom CTA Section */}
         <motion.div
-          className="relative bg-gradient-to-br from-[#2B75FF] to-purple-600 rounded-3xl p-12 shadow-2xl overflow-hidden"
+          className="relative bg-gradient-to-br from-[#1199B6] to-purple-600 rounded-3xl p-12 shadow-2xl overflow-hidden"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1.5 }}
@@ -414,20 +414,20 @@ export default function PersonalizedLearningPath() {
               transition={{ duration: 0.6, delay: 2.1 }}
             >
               {/* Top Right Corner Decoration */}
-              <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-[#2B75FF] rounded group-hover:-mr-4 group-hover:-mt-4">
+              <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-[#1199B6] rounded group-hover:-mr-4 group-hover:-mt-4">
                 <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
               </span>
               
               {/* Bottom Left Corner Decoration */}
-              <span className="absolute bottom-0 rotate-180 left-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-[#2B75FF] rounded group-hover:-ml-4 group-hover:-mb-4">
+              <span className="absolute bottom-0 rotate-180 left-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-[#1199B6] rounded group-hover:-ml-4 group-hover:-mb-4">
                 <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
               </span>
               
               {/* Sliding Background */}
-              <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full bg-gradient-to-r from-[#2B75FF] to-[#1e5dd1] rounded-xl group-hover:translate-x-0"></span>
+              <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full bg-gradient-to-r from-[#1199B6] to-[#0e7a8f] rounded-xl group-hover:translate-x-0"></span>
               
               {/* Button Text with Arrow */}
-              <span className="relative w-full text-center text-[#2B75FF] transition-colors duration-300 ease-in-out group-hover:text-white flex items-center justify-center gap-3">
+              <span className="relative w-full text-center text-[#1199B6] transition-colors duration-300 ease-in-out group-hover:text-white flex items-center justify-center gap-3">
                 Get Your Free Roadmap
                 <svg 
                   className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" 
@@ -534,7 +534,7 @@ function LearningStepCard({ step, index, isInView }) {
 
           <div className="flex-1">
             <motion.h3 
-              className="text-xl font-bold text-[#0E1C36] mb-2 group-hover:text-[#2B75FF] transition-colors"
+              className="text-xl font-bold text-[#0C1A2B] mb-2 group-hover:text-[#1199B6] transition-colors"
               animate={isHovered ? { x: [0, 5, 0] } : {}}
               transition={{ duration: 0.5 }}
             >
@@ -558,7 +558,7 @@ function LearningStepCard({ step, index, isInView }) {
       {/* Connection Line to Next Card */}
       {index < 5 && (
         <motion.div
-          className="absolute left-8 top-full w-0.5 h-6 bg-gradient-to-b from-[#2B75FF] to-transparent"
+          className="absolute left-8 top-full w-0.5 h-6 bg-gradient-to-b from-[#1199B6] to-transparent"
           initial={{ scaleY: 0 }}
           animate={isInView ? { scaleY: 1 } : {}}
           transition={{ duration: 0.5, delay: 1 + index * 0.1 }}

@@ -73,7 +73,7 @@ export default function Header() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onFocus={() => setIsSearchFocused(true)}
                   onBlur={() => setIsSearchFocused(false)}
-                  className="w-full px-4 py-3 bg-transparent text-[#0E1C36] placeholder:text-[#0E1C36]/60 focus:outline-none text-sm font-medium"
+                  className="w-full px-4 py-3 bg-transparent text-[#0C1A2B] placeholder:text-[#0C1A2B]/60 focus:outline-none text-sm font-medium"
                 />
                 {searchQuery && (
                   <button
@@ -81,7 +81,7 @@ export default function Header() {
                     onClick={() => setSearchQuery('')}
                     className="mr-3 p-1 rounded-lg hover:bg-gray-200 transition-colors"
                   >
-                    <svg className="w-4 h-4 text-[#0E1C36]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-[#0C1A2B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </button>
@@ -108,7 +108,7 @@ export default function Header() {
             >
               <Link 
                 href="/courses" 
-                className="px-4 py-2 rounded-lg text-[#0E1C36] hover:text-[#2B75FF] hover:bg-[#2B75FF]/10 transition-all duration-200 font-medium text-sm flex items-center space-x-2 group"
+                className="px-4 py-2 rounded-lg text-[#0C1A2B] hover:text-[#1199B6] hover:bg-[#1199B6]/10 transition-all duration-200 font-medium text-sm flex items-center space-x-2 group"
               >
                 <svg className="w-4 h-4 group-hover:text-[#D4AF37] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -127,13 +127,11 @@ export default function Header() {
               {/* Dropdown Menu */}
               {isCoursesDropdownOpen && (
                 <div 
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] bg-white rounded-lg shadow-2xl border border-gray-200 overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-200"
-                  onMouseEnter={() => setIsCoursesDropdownOpen(true)}
-                  onMouseLeave={() => {
-                    setIsCoursesDropdownOpen(false);
-                    setHoveredCategory(null);
-                  }}
+                  className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[600px] z-50"
                 >
+                  <div 
+                    className="w-full bg-white rounded-lg shadow-2xl border border-gray-200 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200"
+                  >
                   <div className="flex">
                     {/* Left Sidebar */}
                     <div className="w-[280px] border-r border-gray-200 max-h-[600px] overflow-y-auto">
@@ -141,7 +139,7 @@ export default function Header() {
                       <div className="p-4">
                         <div className="flex items-center justify-between mb-3">
                           <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">COURSE CATEGORIES</h3>
-                          <Link href="/courses" className="text-sm font-medium text-green-600 hover:text-green-700">
+                          <Link href="/courses" className="text-sm font-medium text-[#1199B6] hover:text-[#0e7a8f]">
                             View All Free Courses
                           </Link>
                         </div>
@@ -155,7 +153,7 @@ export default function Header() {
                               <Link
                                 href={`/courses?category=${encodeURIComponent(category.title)}`}
                                 className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors group ${
-                                  hoveredCategory === index ? 'bg-blue-50' : 'hover:bg-gray-50'
+                                  hoveredCategory === index ? 'bg-[#1199B6]/10' : 'hover:bg-gray-50'
                                 }`}
                               >
                                 <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
@@ -168,7 +166,7 @@ export default function Header() {
                                   />
                                 </div>
                                 <div className="flex-1 min-w-0">
-                                  <p className={`font-medium text-sm ${hoveredCategory === index ? 'text-blue-600' : 'text-gray-900'} transition-colors truncate`}>
+                                  <p className={`font-medium text-sm ${hoveredCategory === index ? 'text-[#1199B6]' : 'text-gray-900'} transition-colors truncate`}>
                                     {category.title}
                                   </p>
                                   <p className="text-xs text-gray-500">({category.courses})</p>
@@ -191,7 +189,7 @@ export default function Header() {
                     {/* Right Side - Subcategories */}
                     {hoveredCategory !== null && courseCategories[hoveredCategory] && (
                       <div className="flex-1 p-6 max-h-[600px] overflow-y-auto">
-                        <h3 className="text-lg font-semibold text-blue-600 mb-4">
+                        <h3 className="text-lg font-semibold text-[#0C1A2B] mb-4">
                           View Top {courseCategories[hoveredCategory].title} Courses
                         </h3>
                         <div className="grid grid-cols-1 gap-2">
@@ -199,7 +197,7 @@ export default function Header() {
                             <Link
                               key={subIndex}
                               href={`/courses?category=${encodeURIComponent(courseCategories[hoveredCategory].title)}&subcategory=${encodeURIComponent(subcategory)}`}
-                              className="text-gray-700 hover:text-blue-600 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-sm font-medium"
+                              className="text-gray-700 hover:text-[#1199B6] py-2 px-3 rounded-lg hover:bg-[#1199B6]/10 transition-colors text-sm font-medium"
                             >
                               {subcategory}
                             </Link>
@@ -208,12 +206,13 @@ export default function Header() {
                       </div>
                     )}
                   </div>
+                  </div>
                 </div>
               )}
             </div>
             <Link 
               href="/about" 
-              className="px-4 py-2 rounded-lg text-[#0E1C36] hover:text-[#2B75FF] hover:bg-[#2B75FF]/10 transition-all duration-200 font-medium text-sm flex items-center space-x-2 group"
+              className="px-4 py-2 rounded-lg text-[#0C1A2B] hover:text-[#1199B6] hover:bg-[#1199B6]/10 transition-all duration-200 font-medium text-sm flex items-center space-x-2 group"
             >
               <svg className="w-4 h-4 group-hover:text-[#D4AF37] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -222,7 +221,7 @@ export default function Header() {
             </Link>
             <Link 
               href="/blog" 
-              className="px-4 py-2 rounded-lg text-[#0E1C36] hover:text-[#2B75FF] hover:bg-[#2B75FF]/10 transition-all duration-200 font-medium text-sm flex items-center space-x-2 group"
+              className="px-4 py-2 rounded-lg text-[#0C1A2B] hover:text-[#1199B6] hover:bg-[#1199B6]/10 transition-all duration-200 font-medium text-sm flex items-center space-x-2 group"
             >
               <svg className="w-4 h-4 group-hover:text-[#D4AF37] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
@@ -231,7 +230,7 @@ export default function Header() {
             </Link>
             <Link
               href="/contact"
-              className="px-4 py-2 rounded-lg text-[#0E1C36] hover:text-[#2B75FF] hover:bg-[#2B75FF]/10 transition-all duration-200 font-medium text-sm flex items-center space-x-2 group"
+              className="px-4 py-2 rounded-lg text-[#0C1A2B] hover:text-[#1199B6] hover:bg-[#1199B6]/10 transition-all duration-200 font-medium text-sm flex items-center space-x-2 group"
             >
               <svg className="w-4 h-4 group-hover:text-[#D4AF37] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -240,7 +239,7 @@ export default function Header() {
             </Link>
             <Link
               href="/enroll"
-              className="px-6 py-2.5 rounded-xl bg-[#0E1C36] text-white font-semibold hover:-translate-y-1 hover:shadow-xl hover:shadow-[#0E1C36]/40 transition-all duration-300 text-sm flex items-center space-x-2 group"
+              className="px-6 py-2.5 rounded-xl bg-[#0C1A2B] text-white font-semibold hover:-translate-y-1 hover:shadow-xl hover:shadow-[#0C1A2B]/40 transition-all duration-300 text-sm flex items-center space-x-2 group"
             >
               <svg className="w-4 h-4 group-hover:text-[#D4AF37] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
@@ -253,7 +252,7 @@ export default function Header() {
           <div className="md:hidden flex items-center space-x-2">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-lg text-[#0E1C36] hover:bg-[#2B75FF]/10 transition-colors"
+              className="p-2 rounded-lg text-[#0C1A2B] hover:bg-[#1199B6]/10 transition-colors"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isMenuOpen ? (
@@ -291,7 +290,7 @@ export default function Header() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onFocus={() => setIsSearchFocused(true)}
                   onBlur={() => setIsSearchFocused(false)}
-                  className="w-full px-4 py-3 bg-transparent text-[#0E1C36] placeholder:text-[#0E1C36]/60 focus:outline-none text-sm font-medium"
+                  className="w-full px-4 py-3 bg-transparent text-[#0C1A2B] placeholder:text-[#0C1A2B]/60 focus:outline-none text-sm font-medium"
                 />
                 {searchQuery && (
                   <button
@@ -299,7 +298,7 @@ export default function Header() {
                     onClick={() => setSearchQuery('')}
                     className="mr-3 p-1 rounded-lg hover:bg-gray-200 transition-colors"
                   >
-                    <svg className="w-4 h-4 text-[#0E1C36]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-[#0C1A2B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </button>
@@ -310,17 +309,17 @@ export default function Header() {
             {/* Mobile Navigation Links */}
             <Link 
               href="/courses" 
-              className="flex items-center space-x-3 px-4 py-3 rounded-lg text-[#0E1C36] hover:text-[#2B75FF] hover:bg-[#2B75FF]/10 transition-all duration-200 font-medium group"
+              className="flex items-center space-x-3 px-4 py-3 rounded-lg text-[#0C1A2B] hover:text-[#1199B6] hover:bg-[#1199B6]/10 transition-all duration-200 font-medium group"
               onClick={() => setIsMenuOpen(false)}
             >
-              <svg className="w-5 h-5 group-hover:text-[#2B75FF] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 group-hover:text-[#1199B6] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
               </svg>
               <span>Courses</span>
             </Link>
             <Link 
               href="/about" 
-              className="flex items-center space-x-3 px-4 py-3 rounded-lg text-[#0E1C36] hover:text-[#2B75FF] hover:bg-[#2B75FF]/10 transition-all duration-200 font-medium group"
+              className="flex items-center space-x-3 px-4 py-3 rounded-lg text-[#0C1A2B] hover:text-[#1199B6] hover:bg-[#1199B6]/10 transition-all duration-200 font-medium group"
               onClick={() => setIsMenuOpen(false)}
             >
               <svg className="w-5 h-5 group-hover:text-[#D4AF37] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -330,27 +329,27 @@ export default function Header() {
             </Link>
             <Link 
               href="/blog" 
-              className="flex items-center space-x-3 px-4 py-3 rounded-lg text-[#0E1C36] hover:text-[#2B75FF] hover:bg-[#2B75FF]/10 transition-all duration-200 font-medium group"
+              className="flex items-center space-x-3 px-4 py-3 rounded-lg text-[#0C1A2B] hover:text-[#1199B6] hover:bg-[#1199B6]/10 transition-all duration-200 font-medium group"
               onClick={() => setIsMenuOpen(false)}
             >
-              <svg className="w-5 h-5 group-hover:text-[#2B75FF] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 group-hover:text-[#1199B6] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
               </svg>
               <span>Blog</span>
             </Link>
             <Link 
               href="/contact" 
-              className="flex items-center space-x-3 px-4 py-3 rounded-lg text-[#0E1C36] hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-all duration-200 font-medium group"
+              className="flex items-center space-x-3 px-4 py-3 rounded-lg text-[#0C1A2B] hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-all duration-200 font-medium group"
               onClick={() => setIsMenuOpen(false)}
             >
-              <svg className="w-5 h-5 group-hover:text-[#2B75FF] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 group-hover:text-[#1199B6] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               <span>Contact Us</span>
             </Link>
             <Link
               href="/enroll"
-              className="flex items-center justify-center space-x-2 px-6 py-3 rounded-xl bg-[#0E1C36] text-white font-semibold hover:-translate-y-1 hover:shadow-xl hover:shadow-[#0E1C36]/40 transition-all duration-300 mt-2 group"
+              className="flex items-center justify-center space-x-2 px-6 py-3 rounded-xl bg-[#0C1A2B] text-white font-semibold hover:-translate-y-1 hover:shadow-xl hover:shadow-[#0C1A2B]/40 transition-all duration-300 mt-2 group"
               onClick={() => setIsMenuOpen(false)}
             >
               <svg className="w-5 h-5 group-hover:text-[#D4AF37] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -12,10 +12,10 @@ export default function Button({
   const baseStyles = 'font-roboto font-semibold rounded-2xl transition-all duration-300 hover:scale-105 inline-flex items-center justify-center relative';
   
   const variants = {
-    primary: 'bg-[#2B75FF] text-white hover:bg-[#0E1C36] hover:shadow-lg',
-    secondary: 'bg-white text-[#2B75FF] border-2 border-[#d7f9ff] hover:border-[#2B75FF] hover:bg-[#2B75FF] hover:text-white',
-    purple: 'bg-[#0E1C36] text-white hover:shadow-lg hover:bg-[#0E1C36]/90',
-    outline: 'bg-transparent text-[#2B75FF] border-2 border-[#2B75FF] hover:bg-[#2B75FF] hover:text-white',
+    primary: 'bg-[#1199B6] text-white hover:bg-[#0C1A2B] hover:shadow-lg',
+    secondary: 'bg-white text-[#1199B6] border-2 border-[#d7f9ff] hover:border-[#1199B6] hover:bg-[#1199B6] hover:text-white',
+    purple: 'bg-[#0C1A2B] text-white hover:shadow-lg hover:bg-[#0C1A2B]/90',
+    outline: 'bg-transparent text-[#1199B6] border-2 border-[#1199B6] hover:bg-[#1199B6] hover:text-white',
   };
   
   const sizes = {

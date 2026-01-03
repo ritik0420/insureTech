@@ -245,7 +245,7 @@ export default function Home() {
   aria-labelledby="what-we-do-heading"
 >
   {/* Premium background */}
-  <div className="absolute inset-0 bg-gradient-to-br from-[#0E1C36] via-[#0E1C36]/95 to-[#2B75FF]/20"></div>
+  <div className="absolute inset-0 bg-gradient-to-br from-[#0C1A2B] via-[#0C1A2B]/95 to-[#1199B6]/20"></div>
   <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(43,117,255,0.25)_0%,transparent_45%),radial-gradient(circle_at_80%_80%,rgba(255,255,255,0.08)_0%,transparent_40%)]"></div>
 
   <div className="relative z-10 max-w-7xl mx-auto">
@@ -256,7 +256,7 @@ export default function Home() {
         className="text-5xl sm:text-6xl font-extrabold text-white mb-6"
       >
         We Don’t Just Teach Skills.  
-        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#2B75FF] to-white">
+        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#1199B6] to-white">
           We Build Tech Careers.
         </span>
       </h2>
@@ -307,7 +307,7 @@ export default function Home() {
 
       {/* Right – Visual */}
       <div className="relative">
-        <div className="absolute -inset-4 bg-gradient-to-r from-[#2B75FF] to-[#0E1C36] opacity-40 blur-3xl rounded-3xl"></div>
+        <div className="absolute -inset-4 bg-gradient-to-r from-[#1199B6] to-[#0C1A2B] opacity-40 blur-3xl rounded-3xl"></div>
 
         <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 hover:scale-[1.03] transition-all duration-500">
           <Image
@@ -319,7 +319,7 @@ export default function Home() {
             priority
           />
 
-          <div className="absolute bottom-6 left-6 right-6 bg-[#0E1C36]/80 backdrop-blur-lg rounded-xl p-5 border border-white/10">
+          <div className="absolute bottom-6 left-6 right-6 bg-[#0C1A2B]/80 backdrop-blur-lg rounded-xl p-5 border border-white/10">
             <p className="text-white font-semibold text-lg">
               Industry-Recognized Certifications
             </p>
@@ -343,16 +343,16 @@ export default function Home() {
           <div className="text-center mb-16 animate-fade-in-up">
             {/* Section badge */}
             <div className="inline-flex items-center gap-2 mb-4 rounded-full bg-white/70 px-3 py-1 shadow-sm border border-white/80 backdrop-blur">
-              <span className="w-2 h-2 bg-[#2B75FF] rounded-full animate-pulse" />
-              <span className="text-xs sm:text-sm font-semibold text-[#2B75FF] uppercase tracking-[0.18em]">
+              <span className="w-2 h-2 bg-[#1199B6] rounded-full animate-pulse" />
+              <span className="text-xs sm:text-sm font-semibold text-[#1199B6] uppercase tracking-[0.18em]">
                 Latest Insights
               </span>
             </div>
             
-            <h2 id="blog-heading" className="text-5xl font-bold mb-4 text-[#0E1C36]">
+            <h2 id="blog-heading" className="text-5xl font-bold mb-4 text-[#0C1A2B]">
               Our Comprehensive Blog
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#2B75FF] to-[#0E1C36] mx-auto rounded-full mb-6"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#1199B6] to-[#0C1A2B] mx-auto rounded-full mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Insights, Updates, and Expert Tips
             </p>
@@ -365,11 +365,11 @@ export default function Home() {
             {blogPosts.map((post, index) => (
               <article 
                 key={index} 
-                className="group bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg border border-blue-100/50 hover:shadow-2xl hover:shadow-[#2B75FF]/20 transition-all duration-500 hover:-translate-y-3 animate-fade-in-up"
+                className="group bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg border border-blue-100/50 hover:shadow-2xl hover:shadow-[#1199B6]/20 transition-all duration-500 hover:-translate-y-3 animate-fade-in-up"
                 style={{ animationDelay: `${(index + 1) * 0.1}s` }}
               >
                 {/* Image Container */}
-                <div className="relative aspect-video bg-gradient-to-br from-[#2B75FF]/10 via-[#d7f9ff] to-[#AFCBFF]/20 overflow-hidden">
+                <div className="relative aspect-video bg-gradient-to-br from-[#1199B6]/10 via-[#d7f9ff] to-[#1199B6]/20 overflow-hidden">
                   <Image
                     src={post.image}
                     alt={post.title}
@@ -377,19 +377,19 @@ export default function Home() {
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#2B75FF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#1199B6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full border border-white/80 shadow-sm z-10">
-                    <span className="text-xs font-semibold text-[#2B75FF]">{post.category || 'IT Insights'}</span>
+                    <span className="text-xs font-semibold text-[#1199B6]">{post.category || 'IT Insights'}</span>
                   </div>
                   {/* Hover overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0E1C36]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0C1A2B]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
                 </div>
                 
                 {/* Content */}
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <svg className="w-4 h-4 text-[#2B75FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-[#1199B6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                     <time className="text-sm text-gray-500 font-medium" dateTime={post.date}>
@@ -397,12 +397,12 @@ export default function Home() {
                     </time>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-[#0E1C36] mb-3 group-hover:text-[#2B75FF] transition-colors duration-300 leading-tight line-clamp-2">
+                  <h3 className="text-xl font-bold text-[#0C1A2B] mb-3 group-hover:text-[#1199B6] transition-colors duration-300 leading-tight line-clamp-2">
                     {post.title}
                   </h3>
                   
                   {/* Read More Link */}
-                  <div className="flex items-center gap-2 text-[#2B75FF] font-semibold text-sm opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                  <div className="flex items-center gap-2 text-[#1199B6] font-semibold text-sm opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                     <span>Read More</span>
                     <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -411,7 +411,7 @@ export default function Home() {
                 </div>
                 
                 {/* Decorative corner accent */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#2B75FF]/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#1199B6]/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </article>
             ))}
           </div>
@@ -446,10 +446,10 @@ export default function Home() {
       <div className="space-y-8">
         <h2
           id="stats-heading"
-          className="text-5xl font-extrabold text-[#0E1C36] leading-tight"
+          className="text-5xl font-extrabold text-[#0C1A2B] leading-tight"
         >
           Why Organizations  
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#2B75FF] to-[#0E1C36]">
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#1199B6] to-[#0C1A2B]">
             Trust InsureTech Skills
           </span>
         </h2>
@@ -460,7 +460,7 @@ export default function Home() {
           measurable outcomes.
         </p>
 
-        <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#2B75FF]/10 text-[#2B75FF] font-semibold">
+        <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#1199B6]/10 text-[#1199B6] font-semibold">
           Proven. Trusted. Outcome-Driven.
         </div>
       </div>
@@ -473,12 +473,12 @@ export default function Home() {
             className="group relative bg-white rounded-2xl p-6 shadow-lg border border-blue-100/40 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
           >
             {/* Accent */}
-            <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-[#2B75FF] to-[#0E1C36] rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-[#1199B6] to-[#0C1A2B] rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
             {/* Icon */}
-            <div className="w-10 h-10 mb-4 rounded-xl bg-[#2B75FF]/10 flex items-center justify-center group-hover:bg-[#2B75FF] transition-colors duration-300">
+            <div className="w-10 h-10 mb-4 rounded-xl bg-[#1199B6]/10 flex items-center justify-center group-hover:bg-[#1199B6] transition-colors duration-300">
               <svg
-                className="w-6 h-6 text-[#2B75FF] group-hover:text-white transition-colors duration-300"
+                className="w-6 h-6 text-[#1199B6] group-hover:text-white transition-colors duration-300"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -493,7 +493,7 @@ export default function Home() {
             </div>
 
             {/* Value */}
-            <div className="text-4xl font-extrabold text-[#0E1C36] mb-2 group-hover:text-[#2B75FF] transition-colors duration-300">
+            <div className="text-4xl font-extrabold text-[#0C1A2B] mb-2 group-hover:text-[#1199B6] transition-colors duration-300">
               {stat.value}
             </div>
 
@@ -510,7 +510,7 @@ export default function Home() {
 
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#2B75FF] text-white" aria-labelledby="cta-heading">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#1199B6] text-white" aria-labelledby="cta-heading">
         <div className="max-w-4xl mx-auto text-center">
           <h2 id="cta-heading" className="text-4xl font-bold mb-4">Seize the Moment: Transform Your Future</h2>
           <p className="text-xl mb-8 text-white/90">
@@ -527,7 +527,7 @@ export default function Home() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white" aria-labelledby="contact-heading">
         <div className="max-w-4xl mx-auto">
           <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-lg">
-            <h2 id="contact-heading" className="text-4xl font-bold text-center mb-8 text-[#0E1C36]">Get In Touch</h2>
+            <h2 id="contact-heading" className="text-4xl font-bold text-center mb-8 text-[#0C1A2B]">Get In Touch</h2>
             <form className="space-y-6" aria-label="Contact form">
               <div className="grid md:grid-cols-2 gap-6">
                 <label htmlFor="full-name" className="sr-only">Full Name</label>
@@ -538,7 +538,7 @@ export default function Home() {
                   placeholder="Full Name"
                   required
                   aria-required="true"
-                  className="w-full px-4 py-3 rounded-2xl border border-[#d7f9ff] focus:outline-none focus:ring-2 focus:ring-[#2B75FF] focus:border-transparent"
+                  className="w-full px-4 py-3 rounded-2xl border border-[#d7f9ff] focus:outline-none focus:ring-2 focus:ring-[#1199B6] focus:border-transparent"
                 />
                 <label htmlFor="email" className="sr-only">Email</label>
                 <input
@@ -548,7 +548,7 @@ export default function Home() {
                   placeholder="Email"
                   required
                   aria-required="true"
-                  className="w-full px-4 py-3 rounded-2xl border border-[#d7f9ff] focus:outline-none focus:ring-2 focus:ring-[#2B75FF] focus:border-transparent"
+                  className="w-full px-4 py-3 rounded-2xl border border-[#d7f9ff] focus:outline-none focus:ring-2 focus:ring-[#1199B6] focus:border-transparent"
                 />
               </div>
               <div className="grid md:grid-cols-2 gap-6">
@@ -558,10 +558,10 @@ export default function Home() {
                   type="tel"
                   name="phone"
                   placeholder="Phone Number"
-                  className="w-full px-4 py-3 rounded-2xl border border-[#d7f9ff] focus:outline-none focus:ring-2 focus:ring-[#2B75FF] focus:border-transparent"
+                  className="w-full px-4 py-3 rounded-2xl border border-[#d7f9ff] focus:outline-none focus:ring-2 focus:ring-[#1199B6] focus:border-transparent"
                 />
                 <label htmlFor="course-category" className="sr-only">Course Category</label>
-                <select id="course-category" name="courseCategory" className="w-full px-4 py-3 rounded-2xl border border-[#d7f9ff] focus:outline-none focus:ring-2 focus:ring-[#2B75FF] focus:border-transparent">
+                <select id="course-category" name="courseCategory" className="w-full px-4 py-3 rounded-2xl border border-[#d7f9ff] focus:outline-none focus:ring-2 focus:ring-[#1199B6] focus:border-transparent">
                   <option value="">Course Category</option>
                   <option value="cloud-computing">Cloud Computing</option>
                   <option value="cybersecurity">Cybersecurity</option>
@@ -575,7 +575,7 @@ export default function Home() {
                 name="message"
                 placeholder="Message"
                 rows="4"
-                className="w-full px-4 py-3 rounded-2xl border border-[#d7f9ff] focus:outline-none focus:ring-2 focus:ring-[#2B75FF] focus:border-transparent"
+                className="w-full px-4 py-3 rounded-2xl border border-[#d7f9ff] focus:outline-none focus:ring-2 focus:ring-[#1199B6] focus:border-transparent"
               ></textarea>
               <div className="text-center">
                 <Button variant="purple" size="lg" className="w-full md:w-auto">

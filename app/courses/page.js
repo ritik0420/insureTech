@@ -37,56 +37,56 @@ function CoursesPageContent() {
       icon: '/images/categoryIcons/computer.png',
       description: 'Master the fundamentals and advanced concepts of cloud computing, enabling you to deploy, manage, and secure hands-on experience with industry leading cloud platforms.',
       courses: '12+ Courses',
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-[#1199B6] to-[#0e7a8f]'
     },
     {
       title: 'IT Security',
       icon: '/images/categoryIcons/encrypted.png',
       description: 'Master the art of safeguarding digital assets with our comprehensive IT Security course. Equip yourself with the latest techniques to defend against cyber threats.',
       courses: '11+ Courses',
-      color: 'from-red-500 to-orange-500'
+      color: 'from-[#0C1A2B] to-[#1199B6]'
     },
     {
       title: 'Data Science',
       icon: '/images/categoryIcons/data-science.png',
       description: 'Dive into the world of Data Science and uncover hidden insights from data. Learn to analyze, visualize, and leverage data to drive strategic decisions.',
       courses: '4+ Courses',
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-[#1199B6] to-[#0C1A2B]'
     },
     {
       title: 'Project Management',
       icon: '/images/categoryIcons/mangement.png',
       description: 'Transform your leadership skills with our Project Management course. Learn to plan, execute, and deliver projects on time and within budget.',
       courses: '5+ Courses',
-      color: 'from-green-500 to-emerald-500'
+      color: 'from-[#0e7a8f] to-[#0C1A2B]'
     },
     {
       title: 'Software Testing',
       icon: '/images/categoryIcons/test.png',
       description: 'Ensure software excellence with our Software Testing course. Master techniques to identify bugs and improve the quality of your applications.',
       courses: '2+ Courses',
-      color: 'from-yellow-500 to-amber-500'
+      color: 'from-[#1199B6] to-[#0e7a8f]'
     },
     {
       title: 'Web Development',
       icon: '/images/categoryIcons/code.png',
       description: 'Unleash your creativity with our Web Development course. Gain the skills to build dynamic and responsive websites from scratch.',
       courses: '4+ Courses',
-      color: 'from-indigo-500 to-blue-500'
+      color: 'from-[#0C1A2B] to-[#1199B6]'
     },
     {
       title: 'Salesforce',
       icon: '/HeroSectionIcon/salesforce.png',
       description: 'Unlock the full potential of CRM with our Salesforce course. Learn to manage customer relationships and drive business growth efficiently.',
       courses: '3+ Courses',
-      color: 'from-teal-500 to-cyan-500'
+      color: 'from-[#1199B6] to-[#0e7a8f]'
     },
     {
       title: 'Networking',
       icon: '/images/categoryIcons/computer.png',
       description: 'A networking course covers the principles of computer networks, including protocols, architecture, and security, to build, maintain, and troubleshoot network systems.',
       courses: '2+ Courses',
-      color: 'from-slate-500 to-gray-500'
+      color: 'from-[#0C1A2B] to-[#0e7a8f]'
     },
   ];
 
@@ -573,16 +573,16 @@ function CoursesPageContent() {
 
       <main className="pt-20">
         {/* Enhanced Hero Section */}
-        <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0E1C36] via-[#0E1C36] to-[#1a2d5a] overflow-hidden">
+        <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0C1A2B] via-[#0C1A2B] to-[#0a1625] overflow-hidden">
           {/* Animated Background Elements */}
           <div className="absolute inset-0">
-            <div className="absolute top-0 left-0 w-96 h-96 bg-[#2B75FF]/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#AFCBFF]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#2B75FF]/5 rounded-full blur-3xl"></div>
+            <div className="absolute top-0 left-0 w-96 h-96 bg-[#1199B6]/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#1199B6]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#1199B6]/5 rounded-full blur-3xl"></div>
           </div>
 
           {/* Grid Pattern Overlay */}
-          <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#2B75FF_1px,transparent_1px),linear-gradient(to_bottom,#2B75FF_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+          <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#1199B6_1px,transparent_1px),linear-gradient(to_bottom,#1199B6_1px,transparent_1px)] bg-[size:40px_40px]"></div>
 
           <div className="relative z-10 max-w-7xl mx-auto">
             <motion.div
@@ -598,7 +598,7 @@ function CoursesPageContent() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6"
               >
-                <span className="w-2 h-2 bg-[#2B75FF] rounded-full animate-pulse"></span>
+                <span className="w-2 h-2 bg-[#1199B6] rounded-full animate-pulse"></span>
                 <span className="text-sm font-semibold text-white/90 uppercase tracking-wider">Explore Our Wide Range of Courses</span>
               </motion.div>
 
@@ -615,7 +615,7 @@ function CoursesPageContent() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
-                  className="block bg-gradient-to-r from-[#2B75FF] to-[#AFCBFF] bg-clip-text text-transparent"
+                  className="block bg-gradient-to-r from-[#1199B6] to-[#1199B6] bg-clip-text text-transparent"
                 >
                   Professional Courses
                 </motion.span>
@@ -669,7 +669,7 @@ function CoursesPageContent() {
                     transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
                     className="text-center"
                   >
-                    <div className="text-3xl md:text-4xl font-bold text-[#2B75FF] mb-1">{stat.value}</div>
+                    <div className="text-3xl md:text-4xl font-bold text-[#1199B6] mb-1">{stat.value}</div>
                     <div className="text-sm text-white/70">{stat.label}</div>
                   </motion.div>
                 ))}
@@ -778,13 +778,13 @@ function CoursesPageContent() {
         <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#FAFAFA] via-white to-[#F0F7FF] overflow-hidden">
           {/* Decorative Background Elements */}
           <div className="absolute inset-0">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-[#2B75FF]/5 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#AFCBFF]/10 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#2B75FF]/3 rounded-full blur-3xl"></div>
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#1199B6]/5 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#1199B6]/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#1199B6]/3 rounded-full blur-3xl"></div>
           </div>
 
           {/* Grid Pattern Overlay */}
-          <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#2B75FF_1px,transparent_1px),linear-gradient(to_bottom,#2B75FF_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+          <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#1199B6_1px,transparent_1px),linear-gradient(to_bottom,#1199B6_1px,transparent_1px)] bg-[size:40px_40px]"></div>
 
           <div className="relative z-10 max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -801,10 +801,10 @@ function CoursesPageContent() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-[#2B75FF]/10 to-[#AFCBFF]/10 border border-[#2B75FF]/20 backdrop-blur-sm"
+                  className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-[#1199B6]/10 to-[#1199B6]/10 border border-[#1199B6]/20 backdrop-blur-sm"
                 >
-                  <span className="w-2 h-2 bg-[#2B75FF] rounded-full animate-pulse"></span>
-                  <span className="text-sm font-semibold text-[#2B75FF] tracking-wide uppercase">
+                  <span className="w-2 h-2 bg-[#1199B6] rounded-full animate-pulse"></span>
+                  <span className="text-sm font-semibold text-[#1199B6] tracking-wide uppercase">
                     CAREER-READY LEARNING
                   </span>
                 </motion.span>
@@ -818,7 +818,7 @@ function CoursesPageContent() {
                 >
                   Learn skills that actually
                   <br className="hidden sm:block" />
-                  <span className="bg-gradient-to-r from-[#2B75FF] to-[#1a2d5a] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#1199B6] to-[#0C1A2B] bg-clip-text text-transparent">
                     move your career forward.
                   </span>
                 </motion.h2>
@@ -844,7 +844,7 @@ function CoursesPageContent() {
                   <Button
                     href="/enroll"
                     size="lg"
-                    className="bg-gradient-to-r from-[#2B75FF] to-[#1a4fc7] text-white hover:from-[#245fdb] hover:to-[#153a9e] transition-all duration-300 shadow-lg shadow-[#2B75FF]/25 hover:shadow-xl hover:shadow-[#2B75FF]/30 hover:scale-105"
+                    className="bg-gradient-to-r from-[#1199B6] to-[#0e7a8f] text-white hover:from-[#0e7a8f] hover:to-[#0a5d6f] transition-all duration-300 shadow-lg shadow-[#1199B6]/25 hover:shadow-xl hover:shadow-[#1199B6]/30 hover:scale-105"
                   >
                     Get Started
                   </Button>
@@ -853,7 +853,7 @@ function CoursesPageContent() {
                     href="/courses"
                     size="lg"
                     variant="outline"
-                    className="border-2 border-gray-300 text-gray-800 hover:border-[#2B75FF] hover:text-[#2B75FF] hover:bg-[#2B75FF]/5 transition-all duration-300 hover:scale-105"
+                    className="border-2 border-gray-300 text-gray-800 hover:border-[#1199B6] hover:text-[#1199B6] hover:bg-[#1199B6]/5 transition-all duration-300 hover:scale-105"
                   >
                     View Courses
                   </Button>
@@ -869,9 +869,9 @@ function CoursesPageContent() {
                 className="relative"
               >
                 {/* Decorative Glow */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-[#2B75FF] to-[#AFCBFF] rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-[#1199B6] to-[#1199B6] rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"></div>
                 
-                <div className="relative rounded-2xl border border-gray-200/50 bg-white/80 backdrop-blur-sm p-8 shadow-xl shadow-[#2B75FF]/10 hover:shadow-2xl hover:shadow-[#2B75FF]/15 transition-all duration-300">
+                <div className="relative rounded-2xl border border-gray-200/50 bg-white/80 backdrop-blur-sm p-8 shadow-xl shadow-[#1199B6]/10 hover:shadow-2xl hover:shadow-[#1199B6]/15 transition-all duration-300">
                   <div className="space-y-6">
                     <motion.div
                       initial={{ opacity: 0, x: 20 }}
@@ -880,14 +880,14 @@ function CoursesPageContent() {
                       transition={{ duration: 0.5, delay: 0.2 }}
                       className="flex items-start gap-4"
                     >
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2B75FF] to-[#1a4fc7] flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#2B75FF]/25">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1199B6] to-[#0e7a8f] flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#1199B6]/25">
                         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                         </svg>
                       </div>
                       <div>
                         <p className="text-sm font-medium text-gray-500 mb-1">Students trained</p>
-                        <p className="text-3xl font-bold bg-gradient-to-r from-[#2B75FF] to-[#1a2d5a] bg-clip-text text-transparent">25,000+</p>
+                        <p className="text-3xl font-bold bg-gradient-to-r from-[#1199B6] to-[#0C1A2B] bg-clip-text text-transparent">25,000+</p>
                       </div>
                     </motion.div>
 

@@ -33,7 +33,7 @@ export default function CourseDetailPage() {
         <Header />
         <div className="pt-32 pb-16 text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Course Not Found</h1>
-          <Link href="/courses" className="text-[#2B75FF] hover:underline">
+          <Link href="/courses" className="text-[#1199B6] hover:underline">
             Back to Courses
           </Link>
         </div>
@@ -59,8 +59,8 @@ export default function CourseDetailPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0E1C36] via-[#0E1C36] to-[#1a2d5a] overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#2B75FF_1px,transparent_1px),linear-gradient(to_bottom,#2B75FF_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+      <section className="relative pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0C1A2B] via-[#0C1A2B] to-[#0a1625] overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#1199B6_1px,transparent_1px),linear-gradient(to_bottom,#1199B6_1px,transparent_1px)] bg-[size:40px_40px]"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -90,7 +90,7 @@ export default function CourseDetailPage() {
               </motion.p>
             </div>
             <div className="flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-md h-64 bg-[#0E1C36] rounded-2xl border-2 border-white/20 p-8 flex flex-col items-center justify-center">
+              <div className="relative w-full max-w-md h-64 bg-[#0C1A2B] rounded-2xl border-2 border-white/20 p-8 flex flex-col items-center justify-center">
                 <div className="text-white text-4xl font-bold mb-2">aws</div>
                 <div className="flex items-center gap-2 mb-4">
                   <svg className="w-6 h-6 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
@@ -110,13 +110,13 @@ export default function CourseDetailPage() {
           <div className="lg:col-span-2 space-y-12">
             {/* Course Highlights */}
             <section>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0E1C36] mb-6">
-                COURSE <span className="text-[#2B75FF]">HIGHLIGHTS</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0C1A2B] mb-6">
+                COURSE <span className="text-[#1199B6]">HIGHLIGHTS</span>
               </h2>
               <div className="grid sm:grid-cols-2 gap-4">
                 {course.highlights.map((highlight, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-[#2B75FF] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-6 h-6 text-[#1199B6] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                     <span className="text-gray-700">{highlight}</span>
@@ -127,8 +127,8 @@ export default function CourseDetailPage() {
 
             {/* Course Description */}
             <section>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0E1C36] mb-6">
-                Course <span className="text-[#2B75FF]">Description</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0C1A2B] mb-6">
+                Course <span className="text-[#1199B6]">Description</span>
               </h2>
               <div className="space-y-4">
                 {[
@@ -145,9 +145,9 @@ export default function CourseDetailPage() {
                       onClick={() => setExpandedDescription(expandedDescription === section.key ? null : section.key)}
                       className="w-full px-6 py-4 bg-gray-50 hover:bg-gray-100 flex items-center justify-between text-left transition-colors"
                     >
-                      <span className="font-semibold text-[#0E1C36]">{section.title}</span>
+                      <span className="font-semibold text-[#0C1A2B]">{section.title}</span>
                       <svg
-                        className={`w-5 h-5 text-[#2B75FF] transition-transform ${expandedDescription === section.key ? 'rotate-180' : ''}`}
+                        className={`w-5 h-5 text-[#1199B6] transition-transform ${expandedDescription === section.key ? 'rotate-180' : ''}`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -161,7 +161,7 @@ export default function CourseDetailPage() {
                           <ul className="space-y-2 text-gray-700">
                             {section.content.map((item, idx) => (
                               <li key={idx} className="flex items-start gap-2">
-                                <span className="text-[#2B75FF] mt-1">•</span>
+                                <span className="text-[#1199B6] mt-1">•</span>
                                 <span>{item}</span>
                               </li>
                             ))}
@@ -178,10 +178,10 @@ export default function CourseDetailPage() {
 
             {/* Course Module */}
             <section>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0E1C36] mb-6">
-                Course <span className="text-[#2B75FF]">Module</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0C1A2B] mb-6">
+                Course <span className="text-[#1199B6]">Module</span>
               </h2>
-              <div className="bg-[#0E1C36] rounded-2xl p-6 space-y-4">
+              <div className="bg-[#0C1A2B] rounded-2xl p-6 space-y-4">
                 {course.modules.map((module, index) => (
                   <div key={index} className="bg-white/10 rounded-lg overflow-hidden">
                     <button
@@ -203,7 +203,7 @@ export default function CourseDetailPage() {
                         <ul className="space-y-2">
                           {module.topics.map((topic, topicIndex) => (
                             <li key={topicIndex} className="text-white/90 flex items-start gap-2">
-                              <span className="text-[#2B75FF] mt-1">•</span>
+                              <span className="text-[#1199B6] mt-1">•</span>
                               <span>{topic}</span>
                             </li>
                           ))}
@@ -215,7 +215,7 @@ export default function CourseDetailPage() {
               </div>
               <div className="mt-6 text-center">
                 <p className="text-gray-700 mb-4">Want the Full Course Syllabus?</p>
-                <button className="bg-[#2B75FF] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1e5acc] transition-colors">
+                <button className="bg-[#1199B6] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#0e7a8f] transition-colors">
                   DOWNLOAD SYLLABUS
                 </button>
               </div>
@@ -223,7 +223,7 @@ export default function CourseDetailPage() {
 
             {/* Learning Modes */}
             <section>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0E1C36] mb-4 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0C1A2B] mb-4 text-center">
                 Choose Your Preferred Learning Mode
               </h2>
               <p className="text-center text-gray-600 mb-8">
@@ -231,11 +231,11 @@ export default function CourseDetailPage() {
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 {course.learningModes.map((mode, index) => (
-                  <div key={index} className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-center hover:border-[#2B75FF] transition-colors">
+                  <div key={index} className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-center hover:border-[#1199B6] transition-colors">
                     <div className="text-4xl mb-4">{mode.icon}</div>
-                    <h3 className="text-xl font-bold text-[#0E1C36] mb-3">{mode.title}</h3>
+                    <h3 className="text-xl font-bold text-[#0C1A2B] mb-3">{mode.title}</h3>
                     <p className="text-gray-600 mb-6">{mode.description}</p>
-                    <button className="bg-[#2B75FF] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#1e5acc] transition-colors w-full">
+                    <button className="bg-[#1199B6] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#0e7a8f] transition-colors w-full">
                       {mode.buttonText}
                     </button>
                   </div>
@@ -243,7 +243,7 @@ export default function CourseDetailPage() {
               </div>
               <div className="mt-8 text-center">
                 <p className="text-gray-700 mb-4">Looking for a customized training?</p>
-                <button className="bg-[#2B75FF] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1e5acc] transition-colors">
+                <button className="bg-[#1199B6] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#0e7a8f] transition-colors">
                   REQUEST A BATCH
                 </button>
               </div>
@@ -251,16 +251,16 @@ export default function CourseDetailPage() {
 
             {/* Why Insuretech Skills */}
             <section>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0E1C36] mb-8 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0C1A2B] mb-8 text-center">
                 Why Insuretech Skills
               </h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
                 {course.benefits.map((benefit, index) => (
                   <div key={index} className="text-center">
-                    <div className="w-16 h-16 bg-[#2B75FF]/10 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                    <div className="w-16 h-16 bg-[#1199B6]/10 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
                       {benefit.icon}
                     </div>
-                    <h3 className="font-semibold text-[#0E1C36] mb-2">{benefit.title}</h3>
+                    <h3 className="font-semibold text-[#0C1A2B] mb-2">{benefit.title}</h3>
                     <p className="text-sm text-gray-600">{benefit.description}</p>
                   </div>
                 ))}
@@ -269,7 +269,7 @@ export default function CourseDetailPage() {
 
             {/* FAQ */}
             <section>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0E1C36] mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0C1A2B] mb-8">
                 Frequently asked question
               </h2>
               <div className="space-y-4">
@@ -279,9 +279,9 @@ export default function CourseDetailPage() {
                       onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
                       className="w-full px-6 py-4 bg-gray-50 hover:bg-gray-100 flex items-center justify-between text-left transition-colors"
                     >
-                      <span className="font-semibold text-[#0E1C36] pr-4">{faq.question}</span>
+                      <span className="font-semibold text-[#0C1A2B] pr-4">{faq.question}</span>
                       <svg
-                        className={`w-5 h-5 text-[#2B75FF] flex-shrink-0 transition-transform ${expandedFaq === index ? 'rotate-45' : ''}`}
+                        className={`w-5 h-5 text-[#1199B6] flex-shrink-0 transition-transform ${expandedFaq === index ? 'rotate-45' : ''}`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -304,8 +304,8 @@ export default function CourseDetailPage() {
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-6">
               {/* Demo Form */}
-              <div className="bg-white border-2 border-[#2B75FF] rounded-2xl p-6 shadow-lg">
-                <h3 className="text-2xl font-bold text-[#0E1C36] mb-6 text-center">
+              <div className="bg-white border-2 border-[#1199B6] rounded-2xl p-6 shadow-lg">
+                <h3 className="text-2xl font-bold text-[#0C1A2B] mb-6 text-center">
                   GET A FREE DEMO CLASS
                 </h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -317,7 +317,7 @@ export default function CourseDetailPage() {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2B75FF]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1199B6]"
                     />
                   </div>
                   <div>
@@ -328,7 +328,7 @@ export default function CourseDetailPage() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2B75FF]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1199B6]"
                     />
                   </div>
                   <div className="flex gap-2">
@@ -336,7 +336,7 @@ export default function CourseDetailPage() {
                       name="countryCode"
                       value={formData.countryCode}
                       onChange={handleInputChange}
-                      className="px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2B75FF]"
+                      className="px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1199B6]"
                     >
                       <option value="+91">+91</option>
                       <option value="+1">+1</option>
@@ -348,7 +348,7 @@ export default function CourseDetailPage() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       required
-                      className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2B75FF]"
+                      className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1199B6]"
                     />
                   </div>
                   <div>
@@ -386,7 +386,7 @@ export default function CourseDetailPage() {
                       value={formData.program}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2B75FF]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1199B6]"
                     >
                       <option value="">Select Program</option>
                       <option value={course.title}>{course.title}</option>
@@ -394,7 +394,7 @@ export default function CourseDetailPage() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-[#2B75FF] text-white py-3 rounded-lg font-semibold hover:bg-[#1e5acc] transition-colors"
+                    className="w-full bg-[#1199B6] text-white py-3 rounded-lg font-semibold hover:bg-[#0e7a8f] transition-colors"
                   >
                     RESERVE YOUR SEAT NOW
                   </button>
@@ -403,9 +403,9 @@ export default function CourseDetailPage() {
 
               {/* Corporate Training Card */}
               <div className="bg-white border-2 border-gray-200 rounded-2xl p-6">
-                <h3 className="text-xl font-bold text-[#0E1C36] mb-2">Corporate Training</h3>
+                <h3 className="text-xl font-bold text-[#0C1A2B] mb-2">Corporate Training</h3>
                 <p className="text-gray-600 mb-4">Enterprise training for teams</p>
-                <button className="w-full bg-[#2B75FF] text-white py-3 rounded-lg font-semibold hover:bg-[#1e5acc] transition-colors">
+                <button className="w-full bg-[#1199B6] text-white py-3 rounded-lg font-semibold hover:bg-[#0e7a8f] transition-colors">
                   GET A QUOTE
                 </button>
               </div>

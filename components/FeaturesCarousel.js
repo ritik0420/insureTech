@@ -138,16 +138,16 @@ export default function FeaturesCarousel({ features }) {
         <div className="text-center mb-16 animate-fade-in-up">
           {/* Section badge */}
           <div className="inline-flex items-center gap-2 mb-4 rounded-full bg-white/70 px-3 py-1 shadow-sm border border-white/80 backdrop-blur">
-            <span className="w-2 h-2 bg-[#2B75FF] rounded-full animate-pulse" />
-            <span className="text-xs sm:text-sm font-semibold text-[#2B75FF] uppercase tracking-[0.18em]">
+            <span className="w-2 h-2 bg-[#1199B6] rounded-full animate-pulse" />
+            <span className="text-xs sm:text-sm font-semibold text-[#1199B6] uppercase tracking-[0.18em]">
               Why Choose Us
             </span>
           </div>
           
-          <h2 id="why-insuretech-heading" className="text-5xl font-bold mb-4 text-[#0E1C36]">
+          <h2 id="why-insuretech-heading" className="text-5xl font-bold mb-4 text-[#0C1A2B]">
             Why InsureTech Skills?
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#2B75FF] to-[#0E1C36] mx-auto rounded-full mb-6"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#1199B6] to-[#0C1A2B] mx-auto rounded-full mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Experience excellence in IT training with our comprehensive learning solutions
           </p>
@@ -160,11 +160,11 @@ export default function FeaturesCarousel({ features }) {
             <>
               <button
                 onClick={goToPrevious}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-md shadow-2xl border-2 border-blue-100/50 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-[#2B75FF] hover:border-[#2B75FF] hover:shadow-2xl hover:shadow-[#2B75FF]/50 group"
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-md shadow-2xl border-2 border-blue-100/50 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-[#1199B6] hover:border-[#1199B6] hover:shadow-2xl hover:shadow-[#1199B6]/50 group"
                 aria-label="Previous features"
               >
                 <svg
-                  className="w-6 h-6 text-[#2B75FF] group-hover:text-white transition-colors"
+                  className="w-6 h-6 text-[#1199B6] group-hover:text-white transition-colors"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -180,11 +180,11 @@ export default function FeaturesCarousel({ features }) {
 
               <button
                 onClick={goToNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-md shadow-2xl border-2 border-blue-100/50 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-[#2B75FF] hover:border-[#2B75FF] hover:shadow-2xl hover:shadow-[#2B75FF]/50 group"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-md shadow-2xl border-2 border-blue-100/50 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-[#1199B6] hover:border-[#1199B6] hover:shadow-2xl hover:shadow-[#1199B6]/50 group"
                 aria-label="Next features"
               >
                 <svg
-                  className="w-6 h-6 text-[#2B75FF] group-hover:text-white transition-colors"
+                  className="w-6 h-6 text-[#1199B6] group-hover:text-white transition-colors"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -236,26 +236,26 @@ export default function FeaturesCarousel({ features }) {
                         <div className="flip-card-inner relative w-full h-full transition-all duration-[1200ms] ease-in-out transform-style-3d group-hover:rotate-y-180">
                           {/* Front Side */}
                           <div className="flip-card-front absolute w-full h-full backface-hidden">
-                            <div className="bg-gradient-to-br from-blue-50/90 via-white/95 to-purple-50/80 backdrop-blur-sm rounded-2xl p-8 border border-white/60 h-full flex flex-col items-center justify-center relative overflow-hidden group-hover:border-[#2B75FF]/50 transition-all duration-1200">
+                            <div className="bg-gradient-to-br from-blue-50/90 via-white/95 to-purple-50/80 backdrop-blur-sm rounded-2xl p-8 border border-white/60 h-full flex flex-col items-center justify-center relative overflow-hidden group-hover:border-[#1199B6]/50 transition-all duration-1200">
                               {/* Energetic gradient mesh */}
                               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(43,117,255,0.15),transparent_50%),radial-gradient(ellipse_at_bottom_left,rgba(147,51,234,0.08),transparent_50%)]"></div>
                               
                               {/* Animated light rays */}
                               <div className="absolute inset-0 opacity-30">
-                                <div className="absolute inset-0 bg-gradient-to-br from-[#2B75FF]/10 via-transparent to-purple-400/10 animate-pulse"></div>
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#1199B6]/10 via-transparent to-purple-400/10 animate-pulse"></div>
                               </div>
                               
                               {/* Elegant corner accent line */}
-                              <div className="absolute top-0 right-0 w-24 h-24 border-t-2 border-r-2 border-[#2B75FF]/30 rounded-tr-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-1200"></div>
+                              <div className="absolute top-0 right-0 w-24 h-24 border-t-2 border-r-2 border-[#1199B6]/30 rounded-tr-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-1200"></div>
                               
                               {/* Icon - THE HERO */}
                               <div className="relative z-10 mb-8 group-hover:-translate-y-2 transition-all duration-1200">
                                 {/* Mega Glow Effect */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-[#2B75FF] to-[#0E1C36] rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 group-hover:blur-3xl transition-all duration-1200 scale-110 animate-pulse"></div>
-                                <div className="absolute inset-0 bg-[#2B75FF] rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-all duration-1200 scale-125"></div>
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#1199B6] to-[#0C1A2B] rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 group-hover:blur-3xl transition-all duration-1200 scale-110 animate-pulse"></div>
+                                <div className="absolute inset-0 bg-[#1199B6] rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-all duration-1200 scale-125"></div>
                                 
                                 {/* Icon Container - Bigger & Better */}
-                                <div className="relative w-32 h-32 bg-gradient-to-br from-[#2B75FF] via-[#1a5ed6] to-[#0E1C36] rounded-3xl flex items-center justify-center group-hover:scale-110 transition-all duration-1200 border-2 border-white/30 group-hover:border-white/50">
+                                <div className="relative w-32 h-32 bg-gradient-to-br from-[#1199B6] via-[#0e7a8f] to-[#0C1A2B] rounded-3xl flex items-center justify-center group-hover:scale-110 transition-all duration-1200 border-2 border-white/30 group-hover:border-white/50">
                                   <div className="scale-125">
                                     {featureIcons[feature.title]}
                                   </div>
@@ -266,7 +266,7 @@ export default function FeaturesCarousel({ features }) {
                               </div>
                               
                               {/* Title - Bold & Confident */}
-                              <h3 className="relative z-10 text-2xl font-black text-[#0E1C36] text-center mb-2 leading-tight tracking-tight">
+                              <h3 className="relative z-10 text-2xl font-black text-[#0C1A2B] text-center mb-2 leading-tight tracking-tight">
                                 {feature.title}
                               </h3>
                               
@@ -282,7 +282,7 @@ export default function FeaturesCarousel({ features }) {
                               
                               {/* Pill-style Micro CTA */}
                               <div className="relative z-10 mt-auto">
-                                <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#2B75FF] to-[#1a5ed6] hover:from-[#1a5ed6] hover:to-[#0E1C36] text-white text-xs font-bold uppercase tracking-wide rounded-full group-hover:scale-105 transition-all duration-500 border border-white/20">
+                                <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#1199B6] to-[#0e7a8f] hover:from-[#0e7a8f] hover:to-[#0C1A2B] text-white text-xs font-bold uppercase tracking-wide rounded-full group-hover:scale-105 transition-all duration-500 border border-white/20">
                                   <span>Explore</span>
                                   <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
@@ -291,13 +291,13 @@ export default function FeaturesCarousel({ features }) {
                               </div>
                               
                               {/* Enhanced bottom accent */}
-                              <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-transparent via-[#2B75FF]/40 to-transparent group-hover:via-[#2B75FF]/60 transition-all duration-1200"></div>
+                              <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-transparent via-[#1199B6]/40 to-transparent group-hover:via-[#1199B6]/60 transition-all duration-1200"></div>
                             </div>
                           </div>
                           
                           {/* Back Side */}
                           <div className="flip-card-back absolute w-full h-full backface-hidden rotate-y-180">
-                            <div className="bg-gradient-to-br from-[#0E1C36] via-[#1a3a5c] to-[#0d2847] backdrop-blur-sm rounded-2xl p-8 border border-white/20 h-full flex flex-col items-center justify-center relative overflow-hidden">
+                            <div className="bg-gradient-to-br from-[#0C1A2B] via-[#1a3a5c] to-[#0d2847] backdrop-blur-sm rounded-2xl p-8 border border-white/20 h-full flex flex-col items-center justify-center relative overflow-hidden">
                               {/* Enhanced gradient overlay for depth */}
                               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(43,117,255,0.2),transparent_50%),radial-gradient(ellipse_at_bottom_right,rgba(147,51,234,0.15),transparent_50%)]"></div>
                               
@@ -313,7 +313,7 @@ export default function FeaturesCarousel({ features }) {
                               </div>
                               
                               {/* Glowing orb effect for depth */}
-                              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#2B75FF]/10 rounded-full blur-3xl"></div>
+                              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#1199B6]/10 rounded-full blur-3xl"></div>
                               
                               {/* Professional icon badge */}
                               <div className="relative z-10 mb-6">
@@ -370,7 +370,7 @@ export default function FeaturesCarousel({ features }) {
                 onClick={() => goToSlide(index)}
                 className={`transition-all duration-300 ${
                   index === currentIndex
-                    ? 'w-8 h-2 bg-[#2B75FF] rounded-full shadow-lg shadow-[#2B75FF]/50'
+                    ? 'w-8 h-2 bg-[#1199B6] rounded-full shadow-lg shadow-[#1199B6]/50'
                     : 'w-2 h-2 bg-gray-300 rounded-full hover:bg-gray-400'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}

@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0E1C36] text-white font-helvetica-neue font-normal">
+    <footer className="bg-[#0C1A2B] text-white font-helvetica-neue font-normal">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* About Us */}
@@ -20,7 +20,7 @@ export default function Footer() {
                 />
               </div>
             </div>
-            <p className="text-[#AFCBFF] text-sm leading-relaxed">
+            <p className="text-[#1199B6] text-sm leading-relaxed">
               Empowering IT professionals with comprehensive training and certification courses. 
               Transform your career with industry-leading expertise.
             </p>
