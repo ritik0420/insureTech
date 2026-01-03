@@ -9,10 +9,10 @@ import Button from '@/components/Button';
 import CourseCard from '@/components/CourseCard';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-export default function CoursesPage() {
+function CoursesPageContent() {
   const searchParams = useSearchParams();
   const selectedCategory = searchParams?.get('category') || null;
   const [expandedCategory, setExpandedCategory] = useState(selectedCategory || null);
@@ -936,5 +936,17 @@ export default function CoursesPage() {
       <Footer />
       <WhatsAppButton />
     </div>
+  );
+}
+
+export default function CoursesPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0A0E27] via-[#1a1f3a] to-[#0A0E27]">
+        <div className="text-white text-xl">Loading...</div>
+      </div>
+    }>
+      <CoursesPageContent />
+    </Suspense>
   );
 }
