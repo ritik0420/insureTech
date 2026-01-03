@@ -235,14 +235,14 @@ export default function HeroSection() {
               </motion.span>
               <br />
               <motion.span
-                className="inline-block text-[#2B75FF]"
+                className="inline-block text-[#1199B6]"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
                 {cyclingText}
                 <motion.span
-                  className="inline-block w-1 h-8 lg:h-10 bg-[#2B75FF] ml-1 align-middle"
+                  className="inline-block w-1 h-8 lg:h-10 bg-[#1199B6] ml-1 align-middle"
                   animate={{ opacity: [1, 0, 1] }}
                   transition={{
                     duration: 0.8,
@@ -253,7 +253,7 @@ export default function HeroSection() {
               </motion.span>
             </h1>
             <motion.p
-              className="text-xl text-[#2B75FF] mb-2 font-semibold"
+              className="text-xl text-[#1199B6] mb-2 font-semibold"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
@@ -261,7 +261,7 @@ export default function HeroSection() {
               {displayedText}
               {isTyping && (
                 <motion.span
-                  className="inline-block w-0.5 h-6 bg-[#2B75FF] ml-1"
+                  className="inline-block w-0.5 h-6 bg-[#1199B6] ml-1"
                   animate={{ opacity: [1, 0, 1] }}
                   transition={{
                     duration: 0.8,
@@ -287,7 +287,7 @@ export default function HeroSection() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button href="/courses" size="lg" variant="outline" className="relative overflow-visible group">
+              <Button href="/courses" size="lg" variant="outline" className="relative overflow-visible group !text-[#0C1A2B] !border-[#0C1A2B] hover:!bg-[#0C1A2B] hover:!text-white">
                 {/* Decorative background elements inside button */}
                 <motion.div
                   className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 opacity-20 pointer-events-none"
@@ -301,7 +301,7 @@ export default function HeroSection() {
                     ease: "easeInOut",
                   }}
                 >
-                  <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-[#2B75FF] group-hover:text-white transition-colors duration-300">
+                  <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-[#0C1A2B] group-hover:text-white transition-colors duration-300">
                     <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -319,7 +319,7 @@ export default function HeroSection() {
                     delay: 0.5,
                   }}
                 >
-                  <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-[#2B75FF] group-hover:text-white transition-colors duration-300">
+                  <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-[#0C1A2B] group-hover:text-white transition-colors duration-300">
                     <path d="M12 19l7-7 3 3-7 7-3-3z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M2 2l7.586 7.586" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -345,7 +345,7 @@ export default function HeroSection() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4, delay: 1.5 }}
                 >
-                  <div className="text-2xl md:text-3xl font-bold text-[#2B75FF]">
+                  <div className="text-2xl md:text-3xl font-bold text-[#1199B6]">
                     {placementRate}%
                   </div>
                   <p className="text-xs md:text-sm text-gray-600 mt-1">Placement Rate</p>
@@ -356,7 +356,7 @@ export default function HeroSection() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4, delay: 1.6 }}
                 >
-                  <div className="text-2xl md:text-3xl font-bold text-[#2B75FF]">
+                  <div className="text-2xl md:text-3xl font-bold text-[#1199B6]">
                     {attendees}k+
                   </div>
                   <p className="text-xs md:text-sm text-gray-600 mt-1">Attendees</p>
@@ -367,7 +367,7 @@ export default function HeroSection() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4, delay: 1.7 }}
                 >
-                  <div className="text-2xl md:text-3xl font-bold text-[#2B75FF]">
+                  <div className="text-2xl md:text-3xl font-bold text-[#1199B6]">
                     {learnerSatisfaction}%
                   </div>
                   <p className="text-xs md:text-sm text-gray-600 mt-1">Learner Satisfaction</p>
@@ -378,7 +378,7 @@ export default function HeroSection() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4, delay: 1.8 }}
                 >
-                  <div className="text-2xl md:text-3xl font-bold text-[#2B75FF]">
+                  <div className="text-2xl md:text-3xl font-bold text-[#1199B6]">
                     {programOffered}+
                   </div>
                   <p className="text-xs md:text-sm text-gray-600 mt-1">Program Offered</p>
