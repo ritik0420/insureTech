@@ -9,13 +9,13 @@ export default function Footer() {
           {/* About Us */}
           <div>
             <div className="flex items-center mb-4">
-              <div className="relative h-14 w-auto flex items-center justify-center">
+              <div className="relative h-20 sm:h-24 md:h-28 w-auto flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20 shadow-lg">
                 <Image
                   src="/HeroSectionIcon/insuretech logo (1).png"
                   alt="insureTech Skills Logo"
-                  width={200}
-                  height={56}
-                  className="h-14 object-contain"
+                  width={400}
+                  height={160}
+                  className="h-full w-auto object-contain"
                   style={{ width: 'auto' }}
                 />
               </div>
