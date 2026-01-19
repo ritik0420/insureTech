@@ -256,7 +256,7 @@ export default function Home() {
               id="what-we-do-heading"
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 sm:mb-6"
             >
-              We Don&apos;t Just Teach Skills.
+              We Don&#39;t Just Teach Skills.
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#1199B6] to-[#7DD3FC]">
                 We Build Tech Careers.
               </span>
