@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PopularCoursesSection from '@/components/PopularCoursesSection';
@@ -9,7 +9,7 @@ import Button from '@/components/Button';
 import CourseCard from '@/components/CourseCard';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 function CoursesPageContent() {
@@ -567,6 +567,194 @@ function CoursesPageContent() {
     ? categories.filter(cat => cat.title === selectedCategory)
     : categories;
 
+  // CourseCarousel Component for mobile responsiveness
+  function CourseCarousel({ courses }) {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [itemsPerView, setItemsPerView] = useState(1);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const carouselRef = useRef(null);
+
+    useEffect(() => {
+      const updateItemsPerView = () => {
+        if (window.innerWidth < 640) {
+          setItemsPerView(1); // Mobile: 1 item
+        } else if (window.innerWidth < 768) {
+          setItemsPerView(2); // Small tablet: 2 items
+        } else if (window.innerWidth < 1024) {
+          setItemsPerView(3); // Tablet: 3 items
+        } else {
+          setItemsPerView(4); // Desktop: 4 items
+        }
+      };
+
+      updateItemsPerView();
+      window.addEventListener('resize', updateItemsPerView);
+      return () => window.removeEventListener('resize', updateItemsPerView);
+    }, []);
+
+    const totalSlides = Math.max(1, Math.ceil(courses.length / itemsPerView));
+    const maxIndex = Math.max(0, totalSlides - 1);
+
+    const goToPrevious = () => {
+      setCurrentIndex((prev) => {
+        if (totalSlides <= 1) return 0;
+        return prev === 0 ? maxIndex : prev - 1;
+      });
+    };
+
+    const goToNext = () => {
+      setCurrentIndex((prev) => {
+        if (totalSlides <= 1) return 0;
+        return prev === maxIndex ? 0 : prev + 1;
+      });
+    };
+
+    const handleStart = (e) => {
+      setIsDragging(true);
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      setStartX(clientX);
+    };
+
+    const handleMove = (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+    };
+
+    const handleEnd = (e) => {
+      if (!isDragging) return;
+      setIsDragging(false);
+      
+      const clientX = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
+      const diff = startX - clientX;
+      const threshold = 50;
+
+      if (Math.abs(diff) > threshold) {
+        if (diff > 0) {
+          goToNext();
+        } else {
+          goToPrevious();
+        }
+      }
+    };
+
+    const getVisibleCourses = () => {
+      const start = currentIndex * itemsPerView;
+      const end = start + itemsPerView;
+      return courses.slice(start, end);
+    };
+
+    return (
+      <motion.div
+        initial={{ opacity: 0, height: 0 }}
+        animate={{ opacity: 1, height: 'auto' }}
+        exit={{ opacity: 0, height: 0 }}
+        transition={{ duration: 0.5 }}
+        className="relative"
+      >
+        {/* Navigation Arrows - Only show on mobile/tablet when needed */}
+        {totalSlides > 1 && (
+          <>
+            <button
+              onClick={goToPrevious}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/95 backdrop-blur-md shadow-2xl border-2 border-gray-200 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-[#1199B6] hover:border-[#1199B6] hover:shadow-2xl hover:shadow-[#1199B6]/50 group"
+              aria-label="Previous courses"
+            >
+              <svg
+                className="w-5 h-5 md:w-6 md:h-6 text-[#1199B6] group-hover:text-white transition-colors"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+
+            <button
+              onClick={goToNext}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/95 backdrop-blur-md shadow-2xl border-2 border-gray-200 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-[#1199B6] hover:border-[#1199B6] hover:shadow-2xl hover:shadow-[#1199B6]/50 group"
+              aria-label="Next courses"
+            >
+              <svg
+                className="w-5 h-5 md:w-6 md:h-6 text-[#1199B6] group-hover:text-white transition-colors"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          </>
+        )}
+
+        <div
+          ref={carouselRef}
+          className="relative overflow-visible mx-8 md:mx-0 py-2"
+          onMouseDown={handleStart}
+          onMouseMove={handleMove}
+          onMouseUp={handleEnd}
+          onMouseLeave={handleEnd}
+          onTouchStart={handleStart}
+          onTouchMove={handleMove}
+          onTouchEnd={handleEnd}
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+            >
+              {getVisibleCourses().map((course, courseIndex) => {
+                const globalIndex = currentIndex * itemsPerView + courseIndex;
+                return (
+                  <motion.div
+                    key={globalIndex}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: courseIndex * 0.05 }}
+                  >
+                    <CourseCard {...course} />
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Pagination Indicators */}
+        {totalSlides > 1 && (
+          <div className="mt-6 flex items-center justify-center gap-2">
+            {Array.from({ length: totalSlides }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`transition-all duration-300 ${
+                  index === currentIndex
+                    ? 'w-8 h-2 bg-[#1199B6] rounded-full shadow-lg shadow-[#1199B6]/50'
+                    : 'w-2 h-2 bg-gray-300 rounded-full hover:bg-gray-400'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
+      </motion.div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -747,26 +935,9 @@ function CoursesPageContent() {
                     </div>
                   </div>
 
-                  {/* Courses Grid */}
+                  {/* Courses Carousel/Grid */}
                   {isExpanded && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.5 }}
-                      className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-                    >
-                      {categoryCourses.map((course, courseIndex) => (
-                        <motion.div
-                          key={courseIndex}
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.4, delay: courseIndex * 0.05 }}
-                        >
-                          <CourseCard {...course} />
-                        </motion.div>
-                      ))}
-                    </motion.div>
+                    <CourseCarousel courses={categoryCourses} />
                   )}
                 </motion.div>
               );

@@ -9,6 +9,7 @@ export default function CategoryCarousel({ categories }) {
   const [itemsPerView, setItemsPerView] = useState(5);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const carouselRef = useRef(null);
 
   // Function to get Unsplash image based on category
@@ -30,13 +31,15 @@ export default function CategoryCarousel({ categories }) {
 
   useEffect(() => {
     const updateItemsPerView = () => {
-      if (window.innerWidth < 640) {
-        setItemsPerView(2); // Mobile: 2 items
-      } else if (window.innerWidth < 768) {
-        setItemsPerView(3); // Small tablet: 3 items
-      } else if (window.innerWidth < 1024) {
-        setItemsPerView(4); // Tablet: 4 items
-      } else if (window.innerWidth < 1280) {
+      const width = window.innerWidth;
+      setIsMobile(width < 640);
+      if (width < 640) {
+        setItemsPerView(1); // Mobile: 1 item
+      } else if (width < 768) {
+        setItemsPerView(2); // Small tablet: 2 items
+      } else if (width < 1024) {
+        setItemsPerView(3); // Tablet: 3 items
+      } else if (width < 1280) {
         setItemsPerView(4); // Large tablet: 4 items
       } else {
         setItemsPerView(4); // Desktop: 4 items
@@ -150,27 +153,12 @@ export default function CategoryCarousel({ categories }) {
           </div>
           
           <motion.div
-            className="flex items-center justify-center gap-4 mb-4"
+            className="flex items-center justify-center mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
-            >
-              <Image
-                src="/space.png"
-                alt="Space exploration icon"
-                width={64}
-                height={64}
-                className="w-12 h-12 md:w-16 md:h-16 drop-shadow-2xl"
-              />
-            </motion.div>
             <h2
               id="course-categories-heading"
               className="text-4xl md:text-5xl font-bold text-white drop-shadow-2xl"
@@ -194,11 +182,11 @@ export default function CategoryCarousel({ categories }) {
           {/* Navigation Arrows */}
           <button
             onClick={goToPrevious}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-md shadow-2xl border-2 border-white/50 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-[#1199B6] hover:border-[#1199B6] hover:shadow-2xl hover:shadow-[#1199B6]/50 group"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 sm:-translate-x-2 md:-translate-x-4 lg:-translate-x-8 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full bg-white/95 backdrop-blur-md shadow-2xl border-2 border-white/50 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-[#1199B6] hover:border-[#1199B6] hover:shadow-2xl hover:shadow-[#1199B6]/50 group active:scale-95"
             aria-label="Previous categories"
           >
             <svg
-              className="w-6 h-6 text-[#1199B6] group-hover:text-white transition-colors"
+              className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#1199B6] group-hover:text-white transition-colors"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -214,11 +202,11 @@ export default function CategoryCarousel({ categories }) {
 
           <button
             onClick={goToNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-md shadow-2xl border-2 border-white/50 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-[#1199B6] hover:border-[#1199B6] hover:shadow-2xl hover:shadow-[#1199B6]/50 group"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 sm:translate-x-2 md:translate-x-4 lg:translate-x-8 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full bg-white/95 backdrop-blur-md shadow-2xl border-2 border-white/50 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-[#1199B6] hover:border-[#1199B6] hover:shadow-2xl hover:shadow-[#1199B6]/50 group active:scale-95"
             aria-label="Next categories"
           >
             <svg
-              className="w-6 h-6 text-[#1199B6] group-hover:text-white transition-colors"
+              className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#1199B6] group-hover:text-white transition-colors"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -235,7 +223,7 @@ export default function CategoryCarousel({ categories }) {
           {/* Carousel */}
           <div
             ref={carouselRef}
-            className="relative overflow-visible mx-8 md:mx-16 py-2"
+            className="relative overflow-visible mx-4 sm:mx-8 md:mx-16 py-2"
             onMouseDown={handleStart}
             onMouseMove={handleMove}
             onMouseUp={handleEnd}
@@ -247,7 +235,7 @@ export default function CategoryCarousel({ categories }) {
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
-                className="relative grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-6 z-0"
+                className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 z-0"
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
@@ -299,73 +287,73 @@ export default function CategoryCarousel({ categories }) {
                           </div>
                           
                           {/* Blue Square Icon with White Icon in bottom-left */}
-                          <div className="absolute bottom-3 left-3 w-10 h-10 bg-[#1199B6] rounded flex items-center justify-center shadow-lg z-10">
-                            <div className="relative w-6 h-6">
+                          <div className="absolute bottom-2 sm:bottom-3 left-2 sm:left-3 w-8 h-8 sm:w-10 sm:h-10 bg-[#1199B6] rounded flex items-center justify-center shadow-lg z-10">
+                            <div className="relative w-4 h-4 sm:w-6 sm:h-6">
                               <Image
                                 src={category.icon}
                                 alt={category.title}
                                 width={24}
                                 height={24}
-                                className="w-6 h-6 object-contain filter brightness-0 invert"
+                                className="w-4 h-4 sm:w-6 sm:h-6 object-contain filter brightness-0 invert"
                               />
                             </div>
                           </div>
                         </div>
 
                         {/* Content Section */}
-                        <div className="p-4 md:p-5">
+                        <div className="p-3 sm:p-4 md:p-5">
                           {/* Title - Large, Bold Blue */}
-                          <h3 className="text-xl md:text-2xl font-bold text-[#1199B6] mb-2 leading-tight">
+                          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#1199B6] mb-1.5 sm:mb-2 leading-tight">
                             {category.title}
                           </h3>
 
                           {/* Description - Smaller Grey */}
                           {category.description && (
-                            <p className="text-sm text-gray-600 mb-4 leading-relaxed line-clamp-2">
+                            <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4 leading-relaxed line-clamp-2">
                               {category.description}
                             </p>
                           )}
 
                           {/* Program Type and Rating Row */}
-                          <div className="flex items-center justify-between mb-3">
+                          <div className="flex items-center justify-between mb-2 sm:mb-3 gap-2">
                             {/* Program Type */}
-                            <div className="flex items-center gap-1.5">
-                              <svg className="w-4 h-4 text-[#1199B6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="flex items-center gap-1 sm:gap-1.5 flex-shrink-0">
+                              <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#1199B6] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                               </svg>
-                              <span className="text-xs font-semibold text-[#1199B6] uppercase tracking-wide">
+                              <span className="text-[10px] sm:text-xs font-semibold text-[#1199B6] uppercase tracking-wide truncate">
                                 {category.courses || 'PROGRAM'}
                               </span>
                             </div>
                             
                             {/* Rating */}
-                            <div className="flex items-center gap-1">
-                              <svg className="w-4 h-4 text-orange-500 fill-orange-500" viewBox="0 0 24 24">
+                            <div className="flex items-center gap-0.5 sm:gap-1 flex-shrink-0">
+                              <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-orange-500 fill-orange-500 flex-shrink-0" viewBox="0 0 24 24">
                                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                               </svg>
-                              <span className="text-sm font-semibold text-orange-500">4.6</span>
+                              <span className="text-xs sm:text-sm font-semibold text-orange-500">4.6</span>
                             </div>
                           </div>
 
                           {/* Divider Line */}
-                          <div className="border-t border-gray-200 my-3"></div>
+                          <div className="border-t border-gray-200 my-2 sm:my-3"></div>
 
                           {/* Difficulty and Duration Row */}
-                          <div className="flex items-center justify-between">
+                          <div className="flex items-center justify-between gap-2">
                             {/* Difficulty Level */}
-                            <div className="flex items-center gap-1.5">
-                              <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="flex items-center gap-1 sm:gap-1.5 flex-shrink-0">
+                              <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                               </svg>
-                              <span className="text-xs text-gray-600">Intermediate</span>
+                              <span className="text-[10px] sm:text-xs text-gray-600 truncate">Intermediate</span>
                             </div>
                             
                             {/* Duration */}
-                            <div className="flex items-center gap-1.5">
-                              <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="flex items-center gap-1 sm:gap-1.5 flex-shrink-0">
+                              <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
-                              <span className="text-xs text-gray-600">62 hours</span>
+                              <span className="text-[10px] sm:text-xs text-gray-600 truncate">62 hours</span>
                             </div>
                           </div>
                         </div>
@@ -378,22 +366,89 @@ export default function CategoryCarousel({ categories }) {
           </div>
         </div>
 
-        {/* Auto-play indicator (optional) */}
-        <div className="mt-8 flex items-center justify-center gap-2">
-          {Array.from({ length: totalSlides }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 backdrop-blur-sm ${
-                index === currentIndex
-                  ? 'bg-[#1199B6] text-white shadow-lg shadow-[#1199B6]/50'
-                  : 'bg-white/20 text-white hover:bg-white/30 border border-white/30'
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            >
-              {index + 1}
-            </button>
-          ))}
+        {/* Auto-play indicator (optional) - Mobile optimized */}
+        <div className="mt-6 sm:mt-8 flex items-center justify-center gap-1 sm:gap-1.5 sm:gap-2 overflow-x-auto pb-2 px-2 max-w-full scrollbar-hide">
+          <div className="flex items-center gap-1 sm:gap-1.5 sm:gap-2">
+            {(() => {
+              const buttons = [];
+              const maxVisible = isMobile ? 5 : 7; // Show max 5 on mobile, 7 on desktop
+              
+              // Always show first page
+              if (totalSlides > 0) {
+                buttons.push(
+                  <button
+                    key={0}
+                    onClick={() => goToSlide(0)}
+                    className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 backdrop-blur-sm min-w-[1.75rem] sm:min-w-[2.5rem] ${
+                      0 === currentIndex
+                        ? 'bg-[#1199B6] text-white shadow-lg shadow-[#1199B6]/50'
+                        : 'bg-white/20 text-white hover:bg-white/30 border border-white/30'
+                    }`}
+                    aria-label="Go to slide 1"
+                  >
+                    1
+                  </button>
+                );
+              }
+              
+              // Show ellipsis if current is far from start
+              if (currentIndex > 2 && totalSlides > maxVisible) {
+                buttons.push(
+                  <span key="ellipsis-start" className="text-white/40 text-xs px-1">...</span>
+                );
+              }
+              
+              // Show pages around current
+              const start = Math.max(1, currentIndex - (isMobile ? 1 : 2));
+              const end = Math.min(totalSlides - 2, currentIndex + (isMobile ? 1 : 2));
+              
+              for (let i = start; i <= end; i++) {
+                if (i > 0 && i < totalSlides - 1) {
+                  buttons.push(
+                    <button
+                      key={i}
+                      onClick={() => goToSlide(i)}
+                      className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 backdrop-blur-sm min-w-[1.75rem] sm:min-w-[2.5rem] ${
+                        i === currentIndex
+                          ? 'bg-[#1199B6] text-white shadow-lg shadow-[#1199B6]/50'
+                          : 'bg-white/20 text-white hover:bg-white/30 border border-white/30'
+                      }`}
+                      aria-label={`Go to slide ${i + 1}`}
+                    >
+                      {i + 1}
+                    </button>
+                  );
+                }
+              }
+              
+              // Show ellipsis if current is far from end
+              if (currentIndex < totalSlides - 3 && totalSlides > maxVisible) {
+                buttons.push(
+                  <span key="ellipsis-end" className="text-white/40 text-xs px-1">...</span>
+                );
+              }
+              
+              // Always show last page (if more than 1 page)
+              if (totalSlides > 1) {
+                buttons.push(
+                  <button
+                    key={totalSlides - 1}
+                    onClick={() => goToSlide(totalSlides - 1)}
+                    className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 backdrop-blur-sm min-w-[1.75rem] sm:min-w-[2.5rem] ${
+                      totalSlides - 1 === currentIndex
+                        ? 'bg-[#1199B6] text-white shadow-lg shadow-[#1199B6]/50'
+                        : 'bg-white/20 text-white hover:bg-white/30 border border-white/30'
+                    }`}
+                    aria-label={`Go to slide ${totalSlides}`}
+                  >
+                    {totalSlides}
+                  </button>
+                );
+              }
+              
+              return buttons;
+            })()}
+          </div>
         </div>
       </div>
     </section>

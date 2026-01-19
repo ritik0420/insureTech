@@ -27,7 +27,7 @@ export default function PersonalizedLearningPath() {
       title: 'Skill Assessment',
       description: 'Comprehensive evaluation of your current skill level',
       icon: (
-        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
         </svg>
       ),
@@ -38,7 +38,7 @@ export default function PersonalizedLearningPath() {
       title: 'One-on-One Mentoring',
       description: 'Personal guidance from industry experts',
       icon: (
-        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
         </svg>
       ),
@@ -49,7 +49,7 @@ export default function PersonalizedLearningPath() {
       title: 'Career Focused Roadmap',
       description: 'Custom learning path aligned with your goals',
       icon: (
-        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
         </svg>
       ),
@@ -60,7 +60,7 @@ export default function PersonalizedLearningPath() {
       title: 'Customized Projects',
       description: 'Hands-on experience with real-world scenarios',
       icon: (
-        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
         </svg>
       ),
@@ -71,7 +71,7 @@ export default function PersonalizedLearningPath() {
       title: 'Job Interview Prep',
       description: 'Master the art of technical interviews',
       icon: (
-        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       ),
@@ -82,7 +82,7 @@ export default function PersonalizedLearningPath() {
       title: 'Mock Interviews',
       description: 'Practice with realistic interview scenarios',
       icon: (
-        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
         </svg>
       ),
@@ -93,7 +93,7 @@ export default function PersonalizedLearningPath() {
   return (
     <section 
       ref={sectionRef}
-      className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50"
+      className="py-8 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50"
       aria-labelledby="learning-path-heading"
     >
       {/* Animated Background Elements */}
@@ -125,31 +125,31 @@ export default function PersonalizedLearningPath() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-6 sm:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
           {/* Badge */}
           <motion.div 
-            className="inline-flex items-center gap-2 mb-4 rounded-full bg-white/70 px-4 py-2 shadow-md border border-white/80 backdrop-blur"
+            className="inline-flex items-center gap-1.5 sm:gap-2 mb-3 sm:mb-4 rounded-full bg-white/70 px-3 sm:px-4 py-1.5 sm:py-2 shadow-md border border-white/80 backdrop-blur"
             initial={{ scale: 0 }}
             animate={isInView ? { scale: 1 } : {}}
             transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
           >
             <motion.span 
-              className="w-2 h-2 bg-[#1199B6] rounded-full"
+              className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#1199B6] rounded-full"
               animate={{ scale: [1, 1.5, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
-            <span className="text-sm font-semibold text-[#1199B6] uppercase tracking-wider">
+            <span className="text-xs sm:text-sm font-semibold text-[#1199B6] uppercase tracking-wider">
               Your Success Journey
             </span>
           </motion.div>
 
           <motion.h2 
             id="learning-path-heading" 
-            className="text-5xl md:text-6xl font-bold mb-6 text-[#0C1A2B]"
+            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-6 text-[#0C1A2B]"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -158,14 +158,14 @@ export default function PersonalizedLearningPath() {
           </motion.h2>
           
           <motion.div 
-            className="w-32 h-1 bg-gradient-to-r from-[#1199B6] to-purple-500 mx-auto rounded-full mb-6"
+            className="w-24 sm:w-32 h-0.5 sm:h-1 bg-gradient-to-r from-[#1199B6] to-purple-500 mx-auto rounded-full mb-4 sm:mb-6"
             initial={{ width: 0 }}
-            animate={isInView ? { width: 128 } : {}}
+            animate={isInView ? { width: '96px' } : {}}
             transition={{ duration: 1, delay: 0.4 }}
           />
           
           <motion.p 
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            className="text-sm sm:text-base lg:text-xl text-gray-600 max-w-3xl mx-auto px-2"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -175,10 +175,10 @@ export default function PersonalizedLearningPath() {
         </motion.div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          {/* Left Side - Image with 3D Effect */}
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center mb-8 sm:mb-12 lg:mb-16">
+          {/* Left Side - Image with 3D Effect - Hidden on mobile */}
           <motion.div 
-            className="relative"
+            className="relative hidden lg:block"
             initial={{ opacity: 0, x: -100 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1, delay: 0.3 }}
@@ -222,7 +222,7 @@ export default function PersonalizedLearningPath() {
           </motion.div>
 
           {/* Right Side - Learning Steps with Creative Cards */}
-          <div className="relative space-y-6">
+          <div className="relative space-y-3 sm:space-y-4 lg:space-y-6">
             {learningSteps.map((step, index) => (
               <LearningStepCard 
                 key={step.id} 
@@ -236,7 +236,7 @@ export default function PersonalizedLearningPath() {
 
         {/* Bottom CTA Section */}
         <motion.div
-          className="relative bg-gradient-to-br from-[#1199B6] to-purple-600 rounded-3xl p-12 shadow-2xl overflow-hidden"
+          className="relative bg-gradient-to-br from-[#1199B6] to-purple-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-2xl overflow-hidden"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1.5 }}
@@ -387,7 +387,7 @@ export default function PersonalizedLearningPath() {
 
           <div className="relative z-10 text-center text-white">
             <motion.h3 
-              className="text-3xl md:text-4xl font-bold mb-4"
+              className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3 sm:mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 1.7 }}
@@ -395,7 +395,7 @@ export default function PersonalizedLearningPath() {
               Ready to Start Your Learning Journey?
             </motion.h3>
             <motion.p 
-              className="text-xl mb-8 text-white/90 max-w-2xl mx-auto"
+              className="text-sm sm:text-base lg:text-xl mb-6 sm:mb-8 text-white/90 max-w-2xl mx-auto px-2"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 1.9 }}
@@ -403,7 +403,7 @@ export default function PersonalizedLearningPath() {
               Get a free personalized roadmap consultation from our expert mentors
             </motion.p>
             <motion.button
-              className="relative inline-flex items-center justify-center px-8 py-4 overflow-hidden font-bold text-lg transition-all bg-white rounded-xl group shadow-lg mx-auto"
+              className="relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 overflow-hidden font-bold text-sm sm:text-base lg:text-lg transition-all bg-white rounded-xl group shadow-lg mx-auto"
               whileHover={{ 
                 scale: 1.05,
                 y: -2,
@@ -504,7 +504,7 @@ function LearningStepCard({ step, index, isInView }) {
       onHoverEnd={() => setIsHovered(false)}
     >
       <motion.div
-        className="relative bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/50 overflow-hidden cursor-pointer"
+        className="relative bg-white/80 backdrop-blur-md rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 shadow-lg border border-white/50 overflow-hidden cursor-pointer"
         whileHover={{ 
           scale: 1.03,
           boxShadow: "0 20px 40px rgba(43, 117, 255, 0.2)"
@@ -518,10 +518,10 @@ function LearningStepCard({ step, index, isInView }) {
           transition={{ duration: 1.5, repeat: isHovered ? Infinity : 0 }}
         />
 
-        <div className="relative z-10 flex items-start gap-4">
+        <div className="relative z-10 flex items-start gap-2 sm:gap-3 lg:gap-4">
           {/* Icon with Float Animation */}
           <motion.div
-            className={`w-16 h-16 rounded-xl bg-gradient-to-br ${step.color} flex items-center justify-center text-white shadow-lg flex-shrink-0`}
+            className={`w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 rounded-lg sm:rounded-xl bg-gradient-to-br ${step.color} flex items-center justify-center text-white shadow-lg flex-shrink-0`}
             animate={{
               y: isHovered ? [-5, 5, -5] : 0,
               rotate: isHovered ? [0, 5, -5, 0] : 0,
@@ -529,18 +529,20 @@ function LearningStepCard({ step, index, isInView }) {
             transition={{ duration: 2, repeat: isHovered ? Infinity : 0 }}
             whileHover={{ scale: 1.1 }}
           >
-            {step.icon}
+            <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-10 lg:h-10">
+              {step.icon}
+            </div>
           </motion.div>
 
-          <div className="flex-1">
+          <div className="flex-1 min-w-0">
             <motion.h3 
-              className="text-xl font-bold text-[#0C1A2B] mb-2 group-hover:text-[#1199B6] transition-colors"
+              className="text-sm sm:text-base lg:text-xl font-bold text-[#0C1A2B] mb-1 sm:mb-2 group-hover:text-[#1199B6] transition-colors"
               animate={isHovered ? { x: [0, 5, 0] } : {}}
               transition={{ duration: 0.5 }}
             >
               {step.title}
             </motion.h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
               {step.description}
             </p>
           </div>
@@ -558,7 +560,7 @@ function LearningStepCard({ step, index, isInView }) {
       {/* Connection Line to Next Card */}
       {index < 5 && (
         <motion.div
-          className="absolute left-8 top-full w-0.5 h-6 bg-gradient-to-b from-[#1199B6] to-transparent"
+          className="absolute left-5 sm:left-6 lg:left-8 top-full w-0.5 h-3 sm:h-4 lg:h-6 bg-gradient-to-b from-[#1199B6] to-transparent"
           initial={{ scaleY: 0 }}
           animate={isInView ? { scaleY: 1 } : {}}
           transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
